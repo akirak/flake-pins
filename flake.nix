@@ -2,6 +2,13 @@
   inputs.stable.url = "nixpkgs/nixos-22.11";
   inputs.unstable.url = "nixpkgs/nixos-unstable";
 
+  # Update home-manager when nixpkgs is updated
+  inputs.home-manager = {
+    url = "github:nix-community/home-manager";
+    inputs.nixpkgs.follows = "unstable";
+    inputs.utils.follows = "flake-utils";
+  };
+
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.pre-commit-hooks = {
     url = "github:cachix/pre-commit-hooks.nix";
