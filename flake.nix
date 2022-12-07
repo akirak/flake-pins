@@ -1,4 +1,15 @@
 {
+  inputs.stable.url = "nixpkgs/nixos-22.11";
+  inputs.unstable.url = "nixpkgs/nixos-unstable";
+
+  inputs.flake-utils.url = "github:numtide/flake-utils";
+  inputs.pre-commit-hooks = {
+    url = "github:cachix/pre-commit-hooks.nix";
+    inputs.nixpkgs-stable.follows = "stable";
+    inputs.nixpkgs.follows = "unstable";
+    inputs.flake-utils.follows = "flake-utils";
+  };
+
   outputs = {
     self,
     nixpkgs,
