@@ -5,7 +5,8 @@
   # Update home-manager when nixpkgs is updated
   inputs.home-manager = {
     url = "github:nix-community/home-manager";
-    inputs.nixpkgs.follows = "unstable";
+    # This doesn't work
+    # inputs.nixpkgs.follows = "unstable";
     inputs.utils.follows = "flake-utils";
   };
 
