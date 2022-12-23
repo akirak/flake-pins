@@ -14,8 +14,20 @@ jobs:
       with:
         extra_nix_config: |
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-    - uses: DeterminateSystems/update-flake-lock@v15
+
+    - name: Update the flake inputs
+      run: nix flake update
+
+    - name: Regenerate the registry
+      run: |
+        nix build .#registry
+        jq . result > registry.json
+
+    - uses: peter-evans/create-pull-request@v4
+      id: pr
       with:
-        pr-title: "Update flake.lock"
-        pr-labels: |
-          automation
+        commit-message: 'Update flake inputs'
+        base: master
+        title: 'build: Update dependencies'
+        branch: create-pull-request/update
+        labels: automation,update
