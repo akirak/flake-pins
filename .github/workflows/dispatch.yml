@@ -14,6 +14,7 @@ jobs:
       matrix:
         repo:
         - akirak/nix-homelab
+        - akirak/epubinfo
     runs-on: ubuntu-latest
     steps:
       - uses: peter-evans/repository-dispatch@v2
