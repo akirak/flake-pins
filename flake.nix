@@ -22,13 +22,15 @@
     self,
     nixpkgs,
     ...
-  }: {
+  } @ inputs: {
     packages =
       nixpkgs.lib.genAttrs [
         "x86_64-linux"
       ] (system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
+        registry = pkgs.callPackage ./registry.nix {};
+
         apply = pkgs.writeShellScriptBin "apply" ''
           ${pkgs.nix}/bin/nix flake update \
             --extra-experimental-features nix-command \
