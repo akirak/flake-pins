@@ -1,6 +1,7 @@
 {
-  inputs.stable.url = "nixpkgs/nixos-22.11";
-  inputs.unstable.url = "nixpkgs/nixos-unstable";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+  inputs.stable.url = "github:NixOS/nixpkgs/nixos-22.11";
+  inputs.unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
   # Update home-manager when nixpkgs is updated
   inputs.home-manager = {
