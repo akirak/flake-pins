@@ -18,5 +18,6 @@ jobs:
     steps:
       - uses: peter-evans/repository-dispatch@v2
         with:
+          token: ${{ secrets.PAT }}
           repository: ${{ matrix.repo }}
           event-type: flake-update
