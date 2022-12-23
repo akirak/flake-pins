@@ -32,7 +32,7 @@
         registry = pkgs.callPackage ./registry.nix {};
 
         apply = pkgs.writeShellScriptBin "apply" ''
-          ${pkgs.nix}/bin/nix flake update \
+          nix flake update \
             --extra-experimental-features nix-command \
             --extra-experimental-features flakes \
             --inputs-from ${self.outPath}
