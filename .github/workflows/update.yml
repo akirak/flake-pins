@@ -24,7 +24,6 @@ jobs:
         jq . result > registry.json
 
     - uses: peter-evans/create-pull-request@v4
-      id: pr
       with:
         commit-message: 'Update flake inputs'
         base: master
