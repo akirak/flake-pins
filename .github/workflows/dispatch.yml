@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         repo:
+        - akirak/nix-config
         - akirak/nix-homelab
         - akirak/epubinfo
     runs-on: ubuntu-latest
