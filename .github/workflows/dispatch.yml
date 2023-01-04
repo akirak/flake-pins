@@ -15,7 +15,7 @@ jobs:
         repo:
         - akirak/nix-config
         - akirak/nix-homelab
-        - akirak/epubinfo
+        # - akirak/epubinfo
     runs-on: ubuntu-latest
     steps:
       - uses: peter-evans/repository-dispatch@v2
