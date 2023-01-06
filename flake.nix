@@ -32,6 +32,9 @@
       ] (system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
+        emacs-pgtk =
+          inputs.emacs-overlay.packages.${system}.emacsPgtk;
+
         registry = pkgs.callPackage ./registry.nix {};
 
         apply = pkgs.writeShellScriptBin "apply" ''

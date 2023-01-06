@@ -1,0 +1,25 @@
+name: Build Emacs
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'flake.lock'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: cachix/install-nix-action@v18
+      with:
+        extra_nix_config: |
+          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+    - uses: cachix/cachix-action@v12
+      with:
+        name: akirak
+        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+
+    - run: nix build .#emacs-pgtk
