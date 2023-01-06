@@ -19,6 +19,11 @@
     inputs.flake-utils.follows = "flake-utils";
   };
 
+  inputs.flake-compat = {
+    url = "github:edolstra/flake-compat";
+    flake = false;
+  };
+
   inputs.emacs-overlay.url = "github:nix-community/emacs-overlay";
 
   outputs = {
