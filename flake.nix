@@ -2,6 +2,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
   inputs.stable.url = "github:NixOS/nixpkgs/nixos-22.11";
   inputs.unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs.nix.url = "github:NixOS/nix";
 
   # Update home-manager when nixpkgs is updated
   inputs.home-manager = {
@@ -26,6 +27,23 @@
 
   inputs.emacs-overlay.url = "github:nix-community/emacs-overlay";
 
+  inputs.lean4 ={
+    url = "github:leanprover/lean4";
+    inputs = {
+      nixpkgs.follows = "nixpkgs";
+      flake-utils.follows = "flake-utils";
+      nix.follows = "nix";
+    };
+  };
+  inputs.lake = {
+    url = "github:leanprover/lake";
+    inputs = {
+      nixpkgs.follows = "nixpkgs";
+      flake-utils.follows = "flake-utils";
+      lean.follows = "lean4";
+    };
+  };
+
   outputs = {
     self,
     nixpkgs,
@@ -39,6 +57,8 @@
       in {
         emacs-pgtk =
           inputs.emacs-overlay.packages.${system}.emacsPgtk;
+
+        lake = inputs.lake.packages.${system}.cli;
 
         registry = pkgs.callPackage ./registry.nix {};
 
