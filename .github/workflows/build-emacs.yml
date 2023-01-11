@@ -23,9 +23,22 @@ jobs:
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
         pushFilter: '-source$'
 
-    - run: nix build .#emacs-pgtk
+    - name: Build Emacs executable
+      run: |
+        if [[ -s $($command --dry-run) ]]; then
+          $command --print-build-logs
+        else
+          echo Nothing to be built.
+        fi
+      env:
+        command: 'nix build .#emacs-pgtk'
 
-    - run: |
-        nix build github:akirak/nix-config#emacs-config \
-          --inputs-from . \
-          --print-build-logs
+    - name: Build Emacs packages
+      run: |
+        if [[ -s $($command --dry-run) ]]; then
+          $command --print-build-logs
+        else
+          echo Nothing to be built.
+        fi
+      env:
+        command: 'nix build github:akirak/nix-config#emacs-config --inputs-from .'
