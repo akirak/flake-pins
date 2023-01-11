@@ -41,4 +41,4 @@ jobs:
           echo Nothing to be built.
         fi
       env:
-        command: 'nix build github:akirak/nix-config#emacs-config --inputs-from .'
+        command: 'nix build github:akirak/nix-config/develop#emacs-config --inputs-from .'
