@@ -6,7 +6,7 @@ This repository provides a flake registry. You can use the following command to
 update the flake in the current directory from the registry:
 
 ``` shell
-nix flake update --registry https://raw.githubusercontent.com/akirak/flake-pins/master/registry.json
+nix flake update --flake-registry https://raw.githubusercontent.com/akirak/flake-pins/master/registry.json
 ```
 
 Alternatively, you can use the following command:
