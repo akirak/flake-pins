@@ -12,7 +12,7 @@
   };
 
   # I never use Darwin, but some flakes depend on it.
-  inputs.darwin = {
+  inputs.nix-darwin = {
     url = "github:LnL7/nix-darwin";
     inputs.nixpkgs.follows = "nixpkgs";
   };
