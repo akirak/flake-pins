@@ -11,6 +11,12 @@
     inputs.utils.follows = "flake-utils";
   };
 
+  # I never use Darwin, but some flakes depend on it.
+  inputs.darwin = {
+    url = "github:LnL7/nix-darwin";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.pre-commit-hooks = {
     url = "github:cachix/pre-commit-hooks.nix";
