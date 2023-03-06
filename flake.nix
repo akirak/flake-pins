@@ -77,25 +77,56 @@
   outputs = {
     self,
     nixpkgs,
+    flake-utils,
     ...
-  } @ inputs: {
-    packages =
-      nixpkgs.lib.genAttrs [
-        "x86_64-linux"
-      ] (system: let
+  } @ inputs:
+    flake-utils.lib.eachDefaultSystem (
+      system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
-        emacs-pgtk =
-          inputs.emacs-overlay.packages.${system}.emacsPgtk;
+        packages = {
+          emacs-pgtk =
+            inputs.emacs-overlay.packages.${system}.emacsPgtk;
 
-        registry = pkgs.callPackage ./registry.nix {};
+          registry = pkgs.callPackage ./registry.nix {};
 
-        apply = pkgs.writeShellScriptBin "apply" ''
-          nix flake update \
-            --extra-experimental-features nix-command \
-            --extra-experimental-features flakes \
-            --inputs-from ${self.outPath}
-        '';
-      });
-  };
+          apply = pkgs.writeShellScriptBin "apply" ''
+            nix flake update \
+              --extra-experimental-features nix-command \
+              --extra-experimental-features flakes \
+              --inputs-from ${self.outPath}
+          '';
+        };
+
+        devShells = {
+          # Add global devShells for scaffolding new projects
+
+          pnpm = pkgs.mkShell {
+            buildInputs = [
+              pkgs.nodejs_latest
+              pkgs.nodePackages_latest.pnpm
+            ];
+          };
+
+          yarn = pkgs.mkShell {
+            buildInputs = [
+              pkgs.nodejs
+              pkgs.yarn
+            ];
+          };
+
+          npm = pkgs.mkShell {
+            buildInputs = [
+              pkgs.nodejs_latest
+            ];
+          };
+
+          elixir = pkgs.mkShell {
+            buildInputs = [
+              pkgs.elixir
+            ];
+          };
+        };
+      }
+    );
 }
