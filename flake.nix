@@ -86,7 +86,10 @@
       in {
         packages = {
           emacs-pgtk =
-            inputs.emacs-overlay.packages.${system}.emacsPgtk;
+            inputs.emacs-overlay.packages.${system}.emacsPgtk.override {
+              withXwidgets = true;
+              inherit (pkgs) webkitgtk;
+            };
 
           registry = pkgs.callPackage ./registry.nix {};
 
