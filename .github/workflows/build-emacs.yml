@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - 'flake.lock'
+      - 'emacs.nix'
 
 jobs:
   build:
