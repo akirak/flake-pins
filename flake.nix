@@ -85,9 +85,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in {
         packages = {
-          emacs-pgtk = pkgs.callPackage ./emacs.nix {
-            emacs = inputs.emacs-overlay.packages.${system}.emacsPgtk;
-          };
+          emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacsPgtk;
 
           registry = pkgs.callPackage ./registry.nix {};
 
