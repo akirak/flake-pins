@@ -8,8 +8,8 @@ emacs.overrideAttrs
 (old: {
   buildInputs =
     old.buildInputs
-    ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
-      pkgs.webkitgtk
+    ++ lib.optionals stdenv.isLinux [
+      webkitgtk
     ];
 })
 .override {
