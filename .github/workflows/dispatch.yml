@@ -13,9 +13,8 @@ jobs:
     strategy:
       matrix:
         repo:
-        - akirak/nix-config
-        - akirak/nix-homelab
-        # - akirak/epubinfo
+        - akirak/emacs-config
+        - akirak/homelab
     runs-on: ubuntu-latest
     steps:
       - uses: peter-evans/repository-dispatch@v2
