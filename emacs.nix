@@ -7,10 +7,12 @@
   # glib-networking,
 }:
 emacs.override (old: {
-  treeSitterPlugins = with tree-sitter-grammars; old.treeSitterPlugins ++ [
-    tree-sitter-elixir
-    tree-sitter-heex
-  ];
+  treeSitterPlugins =
+    lib.pipe tree-sitter-grammars
+    [
+      (lib.filterAttrs (name: _: name != "recurseForDerivations"))
+      builtins.attrValues
+    ];
 })
 # (emacs.overrideAttrs
 #   (old: {
