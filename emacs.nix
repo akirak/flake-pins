@@ -6,12 +6,12 @@
   # webkitgtk,
   # glib-networking,
 }:
-emacs.override {
-  treeSitterPlugins = with tree-sitter-grammars; [
+emacs.override (old: {
+  treeSitterPlugins = with tree-sitter-grammars; old.treeSitterPlugins ++ [
     tree-sitter-elixir
     tree-sitter-heex
   ];
-}
+})
 # (emacs.overrideAttrs
 #   (old: {
 #     buildInputs =
