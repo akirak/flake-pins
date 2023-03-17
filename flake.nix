@@ -78,11 +78,13 @@
     self,
     nixpkgs,
     flake-utils,
+    unstable,
     ...
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
+        unstablePkgs = unstable.legacyPackages.${system};
       in {
         packages = {
           emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacsPgtk;
@@ -102,27 +104,27 @@
 
           pnpm = pkgs.mkShell {
             buildInputs = [
-              pkgs.nodejs_latest
-              pkgs.nodePackages_latest.pnpm
+              unstablePkgs.nodejs_latest
+              unstablePkgs.nodePackages_latest.pnpm
             ];
           };
 
           yarn = pkgs.mkShell {
             buildInputs = [
-              pkgs.nodejs
-              pkgs.yarn
+              unstablePkgs.nodejs_latest
+              unstablePkgs.yarn
             ];
           };
 
           npm = pkgs.mkShell {
             buildInputs = [
-              pkgs.nodejs_latest
+              unstablePkgs.nodejs_latest
             ];
           };
 
           elixir = pkgs.mkShell {
             buildInputs = [
-              pkgs.elixir
+              unstablePkgs.elixir
             ];
           };
         };
