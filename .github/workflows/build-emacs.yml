@@ -8,7 +8,7 @@ on:
       - 'emacs.nix'
 
 jobs:
-  build:
+  build-emacs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -34,12 +34,14 @@ jobs:
       env:
         command: 'nix build .#emacs-pgtk'
 
-    - name: Build Emacs packages
-      run: |
-        if [[ -s $($command --dry-run) ]]; then
-          $command --print-build-logs
-        else
-          echo Nothing to be built.
-        fi
-      env:
-        command: 'nix build github:akirak/nix-config/develop#emacs-config --inputs-from .'
+  dispatch:
+    needs: ['build-emacs']
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          repository: akirak/emacs-config
+          event-type: rebuild
+          token: ${{ secrets.PAT }}
+          client-payload: '{"flake_inputs_from":"github:akirak/flake-pins/${{ github.sha }}"}'
