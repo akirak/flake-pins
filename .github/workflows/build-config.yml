@@ -40,5 +40,5 @@ jobs:
         nix flake check github:akirak/homelab \
             --accept-flake-config --no-write-lock-file \
             --update-input emacs-config \
-            --inputs-from . \
-            --override-input emacs-config/flake-pins .
+            --override-input emacs-config/flake-pins . \
+            --inputs-from .
