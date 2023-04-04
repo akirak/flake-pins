@@ -34,16 +34,6 @@ jobs:
       env:
         command: 'nix build .#emacs-pgtk'
 
-    - name: Build Emacs packages
-      run: |
-        if [[ -s $($command --dry-run) ]]; then
-          $command --print-build-logs
-        else
-          echo Nothing to be built.
-        fi
-      env:
-        command: 'nix build github:akirak/nix-config/develop#emacs-config --inputs-from .'
-
     - name: Check the homelab flake
     # The inputs of emacs-config aren't correctly updated here.
       run: |
