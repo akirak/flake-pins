@@ -26,13 +26,14 @@ jobs:
 
     - name: Build Emacs executable
       run: |
-        if [[ -s $($command --dry-run) ]]; then
-          $command --print-build-logs
+        if [[ $(nix path-info $(nix eval .#emacs-pgtk.outPath --raw) --json \
+                    --store https://akirak.cachix.org 2>/dev/null \
+                    | jq '.[0].valid') = false ]]
+        then
+          nix build .#emacs-pgtk --print-build-logs
         else
           echo Nothing to be built.
         fi
-      env:
-        command: 'nix build .#emacs-pgtk'
 
     - name: Check the homelab flake
     # The inputs of emacs-config aren't correctly updated here.
