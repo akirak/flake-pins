@@ -35,12 +35,28 @@ jobs:
           echo Nothing to be built.
         fi
 
-    - name: Check the homelab flake
+    - name: Check out homelab
+      uses: actions/checkout@v3
+      with:
+        repository: akirak/homelab
+        path: homelab
+
     # The inputs of emacs-config aren't correctly updated here.
+    - name: Check the homelab flake (before updating)
       run: |
-        nix flake check github:akirak/homelab \
-            --accept-flake-config --no-write-lock-file \
-            --print-build-logs --show-trace \
-            --update-input emacs-config \
-            --override-input emacs-config/flake-pins . \
-            --inputs-from .
+        nix flake check --print-build-logs --show-trace
+      working-directory: ./homelab
+
+    # The inputs of emacs-config aren't correctly updated here.
+    - name: Update the homelab flake
+      run: |
+        nix flake update \
+            --override-input emacs-config/flake-pins ../flake-pins \
+            --inputs-from ../flake-pins
+      working-directory: ./homelab
+
+    # The inputs of emacs-config aren't correctly updated here.
+    - name: Check the homelab flake (after updating)
+      run: |
+        nix flake check --print-build-logs --show-trace
+      working-directory: ./homelab
