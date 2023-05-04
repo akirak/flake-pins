@@ -40,6 +40,7 @@ jobs:
       run: |
         nix flake check github:akirak/homelab \
             --accept-flake-config --no-write-lock-file \
+            --print-build-logs --show-trace \
             --update-input emacs-config \
             --override-input emacs-config/flake-pins . \
             --inputs-from .
