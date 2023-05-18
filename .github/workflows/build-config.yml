@@ -30,10 +30,10 @@ jobs:
       working-directory: ./flake-pins
       run: |
         if [[ $(nix path-info $(nix eval .#emacs-pgtk.outPath --raw) --json \
-                    --store https://akirak.cachix.org 2>/dev/null \
+                    --store https://nix-community.cachix.org 2>/dev/null \
                     | jq '.[0].valid') = false ]]
         then
-          nix build .#emacs-pgtk --print-build-logs
+          nix build .#emacs-pgtk --print-build-logs --accept-flake-config
         else
           echo Nothing to be built.
         fi
