@@ -27,6 +27,7 @@ jobs:
         pushFilter: '-source$'
 
     - name: Build Emacs executable
+      working-directory: ./flake-pins
       run: |
         if [[ $(nix path-info $(nix eval .#emacs-pgtk.outPath --raw) --json \
                     --store https://akirak.cachix.org 2>/dev/null \
