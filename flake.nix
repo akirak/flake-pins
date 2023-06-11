@@ -99,7 +99,7 @@
       in {
         packages = {
           emacs-pgtk = pkgs.callPackage ./emacs.nix {
-            emacs = inputs.emacs-overlay.packages.${system}.emacsPgtk;
+            emacs = inputs.emacs-overlay.packages.${system}.emacs-pgtk;
           };
 
           registry = pkgs.callPackage ./registry.nix {};
