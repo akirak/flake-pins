@@ -41,8 +41,9 @@
 
     nixos-images = {
       url = "github:nix-community/nixos-images";
-      inputs.nixos-2211.follows = "nixpkgs";
-      inputs.nixos-unstable.follows = "unstable";
+      # These inputs currently require workarounds
+      # inputs.nixos-2305.follows = "stable";
+      # inputs.nixos-unstable.follows = "unstable";
     };
 
     nixos-remote = {
