@@ -288,9 +288,7 @@
     "nixos-images": {
       "inputs": {
         "nixos-2305": "nixos-2305",
-        "nixos-unstable": [
-          "unstable"
-        ]
+        "nixos-unstable": "nixos-unstable"
       },
       "locked": {
         "lastModified": 1686819168,
@@ -336,6 +334,22 @@
       "original": {
         "owner": "numtide",
         "repo": "nixos-remote",
+        "type": "github"
+      }
+    },
+    "nixos-unstable": {
+      "locked": {
+        "lastModified": 1686906453,
+        "narHash": "sha256-KfOEs99bjNH+chlUcFqHAQo29tJE+J5EPoZr2kGU2f8=",
+        "owner": "Mic92",
+        "repo": "nixpkgs",
+        "rev": "d4cab20b3a76fef4b9a487c37107df6351ebce33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "ref": "fix-aarch64-zfs",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },
