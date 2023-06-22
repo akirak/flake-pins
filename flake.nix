@@ -9,7 +9,6 @@
       url = "github:nix-community/home-manager";
       # This doesn't work
       # inputs.nixpkgs.follows = "unstable";
-      inputs.utils.follows = "flake-utils";
     };
 
     # I never use Darwin, but some flakes depend on it.
