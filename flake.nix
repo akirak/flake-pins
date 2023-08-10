@@ -4,13 +4,6 @@
     stable.url = "github:NixOS/nixpkgs/nixos-23.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # Update home-manager when nixpkgs is updated
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      # This doesn't work
-      # inputs.nixpkgs.follows = "unstable";
-    };
-
     # I never use Darwin, but some flakes depend on it.
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -18,60 +11,10 @@
     };
 
     flake-utils.url = "github:numtide/flake-utils";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs-stable.follows = "stable";
-      inputs.nixpkgs.follows = "unstable";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
 
     emacs-overlay.url = "github:nix-community/emacs-overlay";
 
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixos-images = {
-      url = "github:nix-community/nixos-images";
-      # These inputs currently require workarounds
-      # inputs.nixos-2305.follows = "stable";
-      # inputs.nixos-unstable.follows = "unstable";
-    };
-
-    nixos-remote = {
-      url = "github:numtide/nixos-remote";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixos-images.follows = "nixos-images";
-      inputs.disko.follows = "disko";
-      inputs.treefmt-nix.follows = "treefmt-nix";
-    };
-
-    cachix-deploy-flake = {
-      url = "github:cachix/cachix-deploy-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.disko.follows = "disko";
-      inputs.home-manager.follows = "home-manager";
-      inputs.darwin.follows = "nix-darwin";
-      inputs.nixos-remote.follows = "nixos-remote";
-    };
-
-    nixos-generators = {
-      url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-    };
+    systems.url = "github:nix-systems/default";
   };
 
   nixConfig = {
@@ -90,9 +33,10 @@
     nixpkgs,
     flake-utils,
     unstable,
+    systems,
     ...
   } @ inputs:
-    flake-utils.lib.eachDefaultSystem (
+    flake-utils.lib.eachSystem (import systems) (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
         unstablePkgs = unstable.legacyPackages.${system};
