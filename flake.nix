@@ -13,6 +13,8 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     emacs-overlay.url = "github:nix-community/emacs-overlay";
+
+    systems.url = "github:nix-systems/default";
   };
 
   nixConfig = {
@@ -31,9 +33,10 @@
     nixpkgs,
     flake-utils,
     unstable,
+    systems,
     ...
   } @ inputs:
-    flake-utils.lib.eachDefaultSystem (
+    flake-utils.lib.eachSystem (import systems) (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
         unstablePkgs = unstable.legacyPackages.${system};
