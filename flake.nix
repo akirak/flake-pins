@@ -4,13 +4,6 @@
     stable.url = "github:NixOS/nixpkgs/nixos-23.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # Update home-manager when nixpkgs is updated
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      # This doesn't work
-      # inputs.nixpkgs.follows = "unstable";
-    };
-
     # I never use Darwin, but some flakes depend on it.
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
