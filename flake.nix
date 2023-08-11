@@ -4,6 +4,12 @@
     stable.url = "github:NixOS/nixpkgs/nixos-23.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    # Needed to provide Emacs executables from default.nix
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+      flake = false;
+    };
+
     # I never use Darwin, but some flakes depend on it.
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
