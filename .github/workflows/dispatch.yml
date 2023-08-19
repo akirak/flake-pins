@@ -13,8 +13,10 @@ jobs:
     strategy:
       matrix:
         repo:
+        # The flake update in emacs-config should trigger subsequent updates in
+        # akirak/homelab as well. See
+        # <https://github.com/akirak/emacs-config/commit/1a8c71755a9b055d2839b4dc5d8b57f4838cda44>.
         - akirak/emacs-config
-        - akirak/homelab
     runs-on: ubuntu-latest
     steps:
       - uses: peter-evans/repository-dispatch@v2
