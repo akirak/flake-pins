@@ -16,7 +16,7 @@ jobs:
         - emacs
         - emacs-pgtk
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         path: flake-pins
 
@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: emacs
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         path: flake-pins
 
@@ -65,7 +65,7 @@ jobs:
         pushFilter: '-source$'
 
     - name: Check out homelab
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: akirak/homelab
         path: homelab
