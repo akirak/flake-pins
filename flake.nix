@@ -84,12 +84,6 @@
               unstablePkgs.nodejs_latest
             ];
           };
-
-          elixir = pkgs.mkShell {
-            buildInputs = [
-              unstablePkgs.elixir
-            ];
-          };
         };
       }
     );
