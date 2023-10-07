@@ -48,9 +48,9 @@
         unstablePkgs = unstable.legacyPackages.${system};
       in {
         packages = {
-          emacs = inputs.emacs-overlay.packages.${system}.emacs-git;
+          emacs = inputs.emacs-overlay.packages.${system}.emacs-unstable;
 
-          emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacs-pgtk;
+          emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacs-unstable-pgtk;
 
           registry = pkgs.callPackage ./registry.nix {};
 
