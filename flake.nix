@@ -4,6 +4,9 @@
     stable.url = "github:NixOS/nixpkgs/nixos-23.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    home-manager-stable.url = "github:nix-community/home-manager/release-23.05";
+    home-manager-unstable.url = "github:nix-community/home-manager";
+
     # Needed to provide Emacs executables from default.nix
     flake-compat = {
       url = "github:edolstra/flake-compat";
