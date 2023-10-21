@@ -22,6 +22,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     emacs-overlay.url = "github:nix-community/emacs-overlay";
+    emacs-builtins.url = "github:emacs-twist/emacs-builtins";
 
     systems.url = "github:nix-systems/default";
   };
@@ -45,7 +46,11 @@
     systems,
     ...
   } @ inputs:
-    flake-utils.lib.eachSystem (import systems) (
+    {
+      # emacs-snapshot in nix-emacs-ci corresponds to emacs-git in emacs-overlay
+      data.emacs = inputs.emacs-builtins.data.emacs-snapshot;
+    }
+    // flake-utils.lib.eachSystem (import systems) (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
         unstablePkgs = unstable.legacyPackages.${system};
