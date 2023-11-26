@@ -506,6 +506,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-tree-sitter": {
+      "locked": {
+        "lastModified": 1701013863,
+        "narHash": "sha256-/77y0qQ/uWFPueG6Mew8BVnNYvR7t7J+21VQqRZWS5Q=",
+        "owner": "akirak",
+        "repo": "nixpkgs",
+        "rev": "4660d83b6d4ecad0c2381ef683e3fef173f21454",
+        "type": "github"
+      },
+      "original": {
+        "owner": "akirak",
+        "ref": "tree-sitter-20231128",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1700108881,
@@ -594,6 +610,7 @@
         "home-manager-unstable": "home-manager-unstable",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_6",
+        "nixpkgs-tree-sitter": "nixpkgs-tree-sitter",
         "stable": "stable",
         "systems": "systems_5",
         "unstable": "unstable"

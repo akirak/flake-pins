@@ -3,6 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     stable.url = "github:NixOS/nixpkgs/nixos-23.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-tree-sitter.url = "github:akirak/nixpkgs/tree-sitter-20231128";
 
     home-manager-stable.url = "github:nix-community/home-manager/release-23.05";
     home-manager-unstable.url = "github:nix-community/home-manager";
@@ -53,12 +54,23 @@
     // flake-utils.lib.eachSystem (import systems) (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
-        unstablePkgs = unstable.legacyPackages.${system};
+        unstablePkgs = import unstable {
+          inherit system;
+          overlays = [
+            (_: prev: {
+              tree-sitter = assert (prev.tree-sitter.version == "0.20.8");
+                inputs.nixpkgs-tree-sitter.legacyPackages.${system}.tree-sitter;
+            })
+            inputs.emacs-overlay.overlays.default
+          ];
+        };
       in {
         packages = {
-          emacs = inputs.emacs-overlay.packages.${system}.emacs-git;
+          # emacs = inputs.emacs-overlay.packages.${system}.emacs-git;
+          emacs = unstablePkgs.emacs-git;
 
-          emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacs-pgtk;
+          # emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacs-pgtk;
+          emacs-pgtk = unstablePkgs.emacs-pgtk;
 
           registry = pkgs.callPackage ./registry.nix {};
 
