@@ -26,7 +26,7 @@ jobs:
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
           accept-flake-config = true
 
-    - uses: cachix/cachix-action@v12
+    - uses: cachix/cachix-action@v13
       with:
         name: akirak
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
@@ -58,7 +58,7 @@ jobs:
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
           accept-flake-config = true
 
-    - uses: cachix/cachix-action@v12
+    - uses: cachix/cachix-action@v13
       with:
         name: akirak
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
