@@ -24,6 +24,9 @@
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-builtins.url = "github:emacs-twist/emacs-builtins";
 
+    ocaml-overlays.url = "github:nix-ocaml/nix-overlays";
+    ocaml-overlays.inputs.nixpkgs.follows = "nixpkgs";
+
     systems.url = "github:nix-systems/default";
   };
 
