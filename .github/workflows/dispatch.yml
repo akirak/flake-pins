@@ -12,15 +12,19 @@ jobs:
   dispatch:
     strategy:
       matrix:
-        repo:
+        include:
         # The flake update in emacs-config should trigger subsequent updates in
         # akirak/homelab as well. See
         # <https://github.com/akirak/emacs-config/commit/1a8c71755a9b055d2839b4dc5d8b57f4838cda44>.
-        - akirak/emacs-config
+        - repo: akirak/emacs-config
+          event: flake-update
+        - repo: akirak/flake-templates
+          event: check
+
     runs-on: ubuntu-latest
     steps:
       - uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.PAT }}
           repository: ${{ matrix.repo }}
-          event-type: flake-update
+          event-type: ${{ matrix.event }}
