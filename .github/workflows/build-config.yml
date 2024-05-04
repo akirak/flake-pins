@@ -82,9 +82,15 @@ jobs:
     # The inputs of emacs-config aren't correctly updated here.
     - name: Update the homelab flake
       run: |
-        nix flake update \
-            --override-input emacs-config/flake-pins ../flake-pins \
-            --inputs-from ../flake-pins
+        nix flake update --inputs-from ../flake-pins \
+        && nix flake update emacs-config \
+             emacs-config/gnu-elpa \
+             emacs-config/nongnu-elpa \
+             emacs-config/melpa \
+             emacs-config/epkgs \
+        && nix flake update emacs-config/flake-pins \
+            --override-input emacs-config/flake-pins ../flake-pins
+
       working-directory: ./homelab
 
     # The inputs of emacs-config aren't correctly updated here.
