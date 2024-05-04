@@ -75,6 +75,9 @@ jobs:
       run: |
         nix flake check --print-build-logs --show-trace
       working-directory: ./homelab
+      # This step can fail due to missing revisions on the default branch of
+      # GNU/nonGNU ELPA. As a workaround, errors are allowed in this step.
+      continue-on-error: true
 
     # The inputs of emacs-config aren't correctly updated here.
     - name: Update the homelab flake
