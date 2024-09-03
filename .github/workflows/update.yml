@@ -24,7 +24,7 @@ jobs:
         jq . result > registry.json
         git diff registry.json
 
-    - uses: peter-evans/create-pull-request@v6
+    - uses: peter-evans/create-pull-request@v7
       with:
         commit-message: 'Update flake inputs'
         token: ${{ secrets.PAT_FOR_PR }}
