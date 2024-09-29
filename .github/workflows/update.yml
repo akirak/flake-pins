@@ -19,5 +19,5 @@ jobs:
           git diff registry.json
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Update the flake registry
+          commit_message: 'chore: Update the flake registry'
           file_pattern: registry.json
