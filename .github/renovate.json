@@ -19,7 +19,7 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["0 21 3,17 * *"]
+    "schedule": ["* 21 3,17 * *"]
   },
   "github-actions": {
     "enabled": true
