@@ -1,7 +1,9 @@
-name: Update the registry
+name: Update the subflakes
 on:
   pull_request:
-    paths: 'flake.lock'
+    paths:
+      - 'flake.lock'
+      - 'pkgs/**'
   workflow_dispatch:
 jobs:
   pkgs-subs:
@@ -15,6 +17,9 @@ jobs:
       - name: Update sub-sub-flakes
         run: |
           for dir in pkgs/*; do
+            if ! [[ -d "$dir" ]]; then
+              continue
+            fi
             cd "$dir"
             nix flake update --inputs-from github:${{ github.repository }}/${{ github.ref }}
             cd ${{ github.workspace }}
