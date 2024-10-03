@@ -115,7 +115,6 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "dir": "lib",
         "lastModified": 1727904772,
         "narHash": "sha256-wQ3RN0mwaLoED8Qu5dc+u0v/pRSPyy50I0FTEyb5/f8=",
         "owner": "NixOS",
@@ -124,7 +123,6 @@
         "type": "github"
       },
       "original": {
-        "dir": "lib",
         "owner": "NixOS",
         "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
