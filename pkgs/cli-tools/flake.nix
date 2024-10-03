@@ -14,9 +14,31 @@
       eachSystem = nixpkgs.lib.genAttrs (import systems);
     in
     {
-      packages = eachSystem (system: {
-        epubinfo = inputs.epubinfo.packages.${system}.default;
-        squasher = inputs.squasher.packages.${system}.default;
-      });
+      packages = eachSystem (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          epubinfo = inputs.epubinfo.packages.${system}.default;
+          squasher = inputs.squasher.packages.${system}.default;
+          github-linguist = pkgs.callPackage ./github-linguist { };
+        }
+      );
+
+      devShells = eachSystem (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          github-linguist = pkgs.mkShell {
+            buildInputs = [
+              pkgs.bundler
+              pkgs.bundix
+            ];
+          };
+        }
+      );
     };
 }
