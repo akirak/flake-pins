@@ -38,29 +38,32 @@
     ];
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    unstable,
-    systems,
-    ...
-  } @ inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      unstable,
+      systems,
+      ...
+    }@inputs:
     {
       # emacs-snapshot in nix-emacs-ci corresponds to emacs-git in emacs-overlay
       data.emacs = inputs.emacs-builtins.data.emacs-snapshot;
     }
     // flake-utils.lib.eachSystem (import systems) (
-      system: let
+      system:
+      let
         pkgs = nixpkgs.legacyPackages.${system};
         unstablePkgs = unstable.legacyPackages.${system};
-      in {
+      in
+      {
         packages = {
           emacs = inputs.emacs-overlay.packages.${system}.emacs-git;
 
           emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacs-pgtk;
 
-          registry = pkgs.callPackage ./registry.nix {};
+          registry = pkgs.callPackage ./registry.nix { };
 
           apply = pkgs.writeShellScriptBin "apply" ''
             nix flake update \
