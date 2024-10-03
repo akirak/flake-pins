@@ -1,7 +1,9 @@
 name: Update the registry
 on:
   pull_request:
-    paths: 'flake.lock'
+    paths:
+      - 'flake.lock'
+      - 'pkgs/**'
   workflow_dispatch:
 jobs:
   pkgs-subs:
