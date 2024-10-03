@@ -1,0 +1,40 @@
+name: Update the registry
+on:
+  pull_request:
+    paths: 'flake.lock'
+  workflow_dispatch:
+jobs:
+  pkgs-subs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@V27
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      - name: Update sub-sub-flakes
+        run: |
+          for dir in pkgs/*; do
+            cd "$dir"
+            nix flake update --inputs-from github:${{ github.repository }}/${{ github.ref }}
+            cd ${{ github.workspace }}
+          done
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: Update the package flakes'
+  pkgs:
+    needs: pkgs-subs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@V27
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      - name: Update sub-sub-flakes
+        run: |
+          cd pkgs
+          nix flake update --inputs-from github:${{ github.repository }}/${{ github.ref }}
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: Update pkgs'
