@@ -25,6 +25,7 @@
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
     systems.url = "github:nix-systems/default";
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   nixConfig = {
@@ -39,63 +40,58 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      flake-utils,
-      unstable,
-      systems,
-      ...
-    }@inputs:
-    {
-      # emacs-snapshot in nix-emacs-ci corresponds to emacs-git in emacs-overlay
-      data.emacs = inputs.emacs-builtins.data.emacs-snapshot;
-    }
-    // flake-utils.lib.eachSystem (import systems) (
-      system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        unstablePkgs = unstable.legacyPackages.${system};
-      in
-      {
-        packages = {
-          emacs = inputs.emacs-overlay.packages.${system}.emacs-git;
+    inputs@{ self, flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import inputs.systems;
+      flake = {
+        # emacs-snapshot in nix-emacs-ci corresponds to emacs-git in emacs-overlay
+        data.emacs = inputs.emacs-builtins.data.emacs-snapshot;
+      };
+      perSystem =
+        {
+          pkgs,
+          system,
+          ...
+        }:
+        {
+          packages = {
+            emacs = inputs.emacs-overlay.packages.${system}.emacs-git;
 
-          emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacs-pgtk;
+            emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacs-pgtk;
 
-          registry = pkgs.callPackage ./registry.nix { };
+            registry = pkgs.callPackage ./registry.nix { };
 
-          apply = pkgs.writeShellScriptBin "apply" ''
-            nix flake update \
-              --extra-experimental-features nix-command \
-              --extra-experimental-features flakes \
-              --inputs-from ${self.outPath}
-          '';
-        };
-
-        devShells = {
-          # Add global devShells for scaffolding new projects
-
-          pnpm = pkgs.mkShell {
-            buildInputs = [
-              unstablePkgs.nodejs_latest
-              unstablePkgs.nodePackages_latest.pnpm
-            ];
+            apply = pkgs.writeShellScriptBin "apply" ''
+              nix flake update \
+                --extra-experimental-features nix-command \
+                --extra-experimental-features flakes \
+                --inputs-from ${self.outPath}
+            '';
           };
 
-          yarn = pkgs.mkShell {
-            buildInputs = [
-              unstablePkgs.nodejs_latest
-              unstablePkgs.yarn
-            ];
-          };
+          devShells = {
+            # Add global devShells for scaffolding new projects
 
-          npm = pkgs.mkShell {
-            buildInputs = [
-              unstablePkgs.nodejs_latest
-            ];
+            pnpm = pkgs.mkShell {
+              buildInputs = [
+                pkgs.nodejs_latest
+                pkgs.nodePackages_latest.pnpm
+              ];
+            };
+
+            yarn = pkgs.mkShell {
+              buildInputs = [
+                pkgs.nodejs_latest
+                pkgs.yarn
+              ];
+            };
+
+            npm = pkgs.mkShell {
+              buildInputs = [
+                pkgs.nodejs_latest
+              ];
+            };
           };
         };
-      }
-    );
+    };
 }
