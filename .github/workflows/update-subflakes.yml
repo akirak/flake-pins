@@ -17,6 +17,9 @@ jobs:
       - name: Update sub-sub-flakes
         run: |
           for dir in pkgs/*; do
+            if ! [[ -d "$dir" ]]; then
+              continue
+            fi
             cd "$dir"
             nix flake update --inputs-from github:${{ github.repository }}/${{ github.ref }}
             cd ${{ github.workspace }}
