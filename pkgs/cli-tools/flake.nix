@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable?dir=lib";
     epubinfo.url = "github:akirak/epubinfo";
     squasher.url = "github:akirak/squasher";
+    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
   };
 
   outputs =
