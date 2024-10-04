@@ -4,7 +4,7 @@
 
     cli-tools = {
       url = "path:./cli-tools";
-      flake = false;
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -14,6 +14,6 @@
       eachSystem = nixpkgs.lib.genAttrs (import systems);
     in
     {
-      packages = eachSystem (system: (import inputs.cli-tools).packages.${system});
+      packages = eachSystem (system: inputs.cli-tools.packages.${system});
     };
 }
