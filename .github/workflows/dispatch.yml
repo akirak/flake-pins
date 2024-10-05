@@ -3,8 +3,6 @@ name: Trigger updates
 on:
   workflow_dispatch:
   pull_request:
-    branches:
-    - master
     paths:
     - registry.json
 
