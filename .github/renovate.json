@@ -5,7 +5,7 @@
   ],
   "labels": [
     "automation",
-    "dependencies",
+    "dependencies"
   ],
   "packageRules": [
     {
