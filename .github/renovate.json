@@ -22,7 +22,10 @@
     "schedule": ["* 21 3,17 * *"]
   },
   "github-actions": {
-    "enabled": true
+    "enabled": true,
+    "automergeSchedule": [
+      "before 7pm"
+    ]
   },
   "nix": {
     "enabled": true
