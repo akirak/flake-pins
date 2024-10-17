@@ -5,6 +5,9 @@ on:
       - 'flake.lock'
       - 'pkgs/**'
   workflow_dispatch:
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   pkgs:
     runs-on: ubuntu-latest
