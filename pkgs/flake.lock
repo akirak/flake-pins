@@ -11,7 +11,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-D8YiAmIEZjNXySV/d/ksAKjPGCBC1ZBTfEZTR62eX4o=",
+        "narHash": "sha256-9AH/LZO/whauk8gEp5kR8abppdMuTQYLp50beKhhNi8=",
         "path": "./cli-tools",
         "type": "path"
       },
