@@ -22,6 +22,7 @@
           epubinfo = inputs.epubinfo.packages.${system}.default;
           squasher = inputs.squasher.packages.${system}.default;
           github-linguist = pkgs.callPackage ./github-linguist { };
+          d2-format = pkgs.callPackage ./d2-format.nix { };
         }
       );
 
