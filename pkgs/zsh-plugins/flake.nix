@@ -36,7 +36,7 @@
                 inherit meta;
               }
               ''
-                ${inputs.${name}.outPath}
+                cp -r ${inputs.${name}.outPath} $out
               ''
           )
           {
