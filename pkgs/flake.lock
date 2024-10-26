@@ -446,7 +446,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-m9ykJwN68fvO8CYJuZIJYSXOzXmOkR4SG8zoGbNc7vw=",
+        "narHash": "sha256-awzSYLVRSFD0alCtkg1azA5+IEASpn/Qeuz4kY7P6P8=",
         "path": "./zsh-plugins",
         "type": "path"
       },
