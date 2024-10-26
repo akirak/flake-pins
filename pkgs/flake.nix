@@ -6,6 +6,18 @@
       url = "path:./cli-tools";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    fonts = {
+      url = "path:./fonts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    data = {
+      url = "path:./data";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zsh-plugins.url = "path:./zsh-plugins";
   };
 
   outputs =
@@ -14,6 +26,16 @@
       eachSystem = nixpkgs.lib.genAttrs (import systems);
     in
     {
-      packages = eachSystem (system: inputs.cli-tools.packages.${system});
+      packages = eachSystem (
+        system:
+        nixpkgs.lib.mergeAttrsList (
+          builtins.map (name: inputs.${name}.packages.${system}) [
+            "cli-tools"
+            "data"
+            "fonts"
+            "zsh-plugins"
+          ]
+        )
+      );
     };
 }
