@@ -10,7 +10,7 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["lockFileMaintenance"],
-      "schedule": ["* 21 3,17 * *"],
+      "schedule": ["* * 3,17 * *"],
       "automerge": false
     },
     {
