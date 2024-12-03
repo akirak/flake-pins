@@ -9,27 +9,16 @@
   ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["lockFileMaintenance"],
-      "schedule": ["* * 3,17 * *"],
-      "automerge": false
-    },
-    {
       "matchManagers": ["github-actions"],
       "groupName": "actions",
       "separateMajorMinor": false,
       "automerge": true
     }
   ],
-  "lockFileMaintenance": {
-    "enabled": true
-  },
   "automergeSchedule": [
     "before 7pm"
   ],
   "github-actions": {
-    "enabled": true
-  },
-  "nix": {
     "enabled": true
   }
 }
