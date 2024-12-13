@@ -18,6 +18,7 @@
       "inputs": {
         "nixpkgs": "nixpkgs",
         "systems": "systems",
+        "zsh-auto-notify": "zsh-auto-notify",
         "zsh-fast-syntax-highlighting": "zsh-fast-syntax-highlighting",
         "zsh-fzy": "zsh-fzy",
         "zsh-history-filter": "zsh-history-filter",
@@ -36,6 +37,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "zsh-auto-notify": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720453411,
+        "narHash": "sha256-ScBwky33leI8mFMpAz3Ng2Z0Gbou4EWMOAhkcMZAWIc=",
+        "owner": "MichaelAquilina",
+        "repo": "zsh-auto-notify",
+        "rev": "27c07dddb42f05b199319a9b66473c8de7935856",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MichaelAquilina",
+        "repo": "zsh-auto-notify",
         "type": "github"
       }
     },

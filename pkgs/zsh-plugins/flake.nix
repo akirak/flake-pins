@@ -2,6 +2,10 @@
   inputs = {
     systems.url = "github:nix-systems/default";
 
+    zsh-auto-notify = {
+      url = "github:MichaelAquilina/zsh-auto-notify";
+      flake = false;
+    };
     zsh-fast-syntax-highlighting = {
       url = "github:zdharma-continuum/fast-syntax-highlighting";
       flake = false;
@@ -40,6 +44,10 @@
               ''
           )
           {
+            "zsh-auto-notify" = {
+              description = "ZSH plugin that automatically sends out a notification when a long running task has completed.";
+              homepage = "https://github.com/MichaelAquilina/zsh-auto-notify";
+            };
             "zsh-fzy" = {
               description = "Use the fzy fuzzy-finder in Zsh";
               homepage = "https://github.com/aperezdc/zsh-fzy";
