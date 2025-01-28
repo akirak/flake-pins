@@ -17,6 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    media = {
+      url = "path:./media";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zsh-plugins.url = "path:./zsh-plugins";
   };
 
@@ -29,10 +34,11 @@
       packages = eachSystem (
         system:
         nixpkgs.lib.mergeAttrsList (
-          builtins.map (name: inputs.${name}.packages.${system}) [
+          builtins.map (name: inputs.${name}.packages.${system} or { }) [
             "cli-tools"
             "data"
             "fonts"
+            "media"
             "zsh-plugins"
           ]
         )
