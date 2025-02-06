@@ -1,4 +1,4 @@
-name: Update the registry
+name: Update the registry from the flake.lock
 on:
   pull_request:
     paths: 'flake.lock'

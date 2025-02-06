@@ -1,4 +1,4 @@
-name: Trigger updates
+name: Dispatch downstream updates
 
 on:
   workflow_dispatch:
