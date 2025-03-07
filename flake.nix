@@ -63,7 +63,7 @@
           packages = {
             emacs = inputs.emacs-overlay.packages.${system}.emacs-git;
 
-            emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacs-pgtk;
+            emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacs-git-pgtk;
 
             registry = pkgs.callPackage ./registry.nix { };
 
