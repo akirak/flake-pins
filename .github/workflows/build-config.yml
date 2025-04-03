@@ -68,7 +68,7 @@ jobs:
       run: |
         if [[ $(nix path-info "$(nix eval .#${{ matrix.output }}.outPath --raw)" --json \
                     --store https://nix-community.cachix.org 2>/dev/null \
-                    | jq '.[0].valid') = false ]]
+                    | jq length) = 0 ]]
         then
           nix build .#${{ matrix.output }} --print-build-logs
         else
