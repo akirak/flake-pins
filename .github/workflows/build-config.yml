@@ -72,7 +72,7 @@ jobs:
         then
           nix build .#${{ matrix.output }} --print-build-logs
         else
-          echo Nothing to be built.
+          echo "The derivation has been already built, so skipping nix build"
         fi
 
   homelab:
