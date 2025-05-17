@@ -35,7 +35,13 @@ in
       ];
     in
     {
-      _module.args.pkgs = inputs.nixpkgs.legacyPackages.${system}.extend overlay;
+      _module.args.pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = [
+          overlay
+        ];
+      };
       packages = packagesFromOverlay;
     };
 }
