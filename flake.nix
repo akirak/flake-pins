@@ -71,6 +71,21 @@
           lib,
           ...
         }:
+        let
+          overlayPackages = builtins.intersectAttrs (pkgs.lib.genAttrs
+            # You have to list individual packages here
+            [
+              "dpt-rp1-py"
+              "intel-media-driver"
+              # "r8168"
+            ]
+            (
+              _name:
+              # anything suffices
+              null
+            )
+          ) pkgs;
+        in
         {
           _module.args.pkgs = nixpkgs.legacyPackages.${system}.extend overlay;
 
@@ -87,7 +102,7 @@
                 --extra-experimental-features flakes \
                 --inputs-from ${self.outPath}
             '';
-          };
+          } // overlayPackages;
 
           devShells = {
             # Add global devShells for scaffolding new projects
