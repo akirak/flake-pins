@@ -46,12 +46,22 @@
   };
 
   outputs =
-    inputs@{ self, flake-parts, ... }:
+    inputs@{
+      self,
+      nixpkgs,
+      flake-parts,
+      ...
+    }:
+    let
+      overlay = import ./overlays;
+    in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import inputs.systems;
       flake = {
         # emacs-snapshot in nix-emacs-ci corresponds to emacs-git in emacs-overlay
         data.emacs = inputs.emacs-builtins.data.emacs-snapshot;
+
+        overlays.default = overlay;
       };
       perSystem =
         {
@@ -60,6 +70,8 @@
           ...
         }:
         {
+          _module.args.pkgs = nixpkgs.legacyPackages.${system}.extend overlay;
+
           packages = {
             emacs = inputs.emacs-overlay.packages.${system}.emacs-git;
 
