@@ -52,17 +52,14 @@
       flake-parts,
       ...
     }:
-    let
-      overlay = import ./overlays;
-    in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import inputs.systems;
-      flake = {
-        # emacs-snapshot in nix-emacs-ci corresponds to emacs-git in emacs-overlay
-        data.emacs = inputs.emacs-builtins.data.emacs-snapshot;
-
-        overlays.default = overlay;
-      };
+      imports = [
+        ./flake-modules/emacs.nix
+        ./flake-modules/registry.nix
+        ./flake-modules/devshell.nix
+        ./flake-modules/overlay.nix
+      ];
       perSystem =
         {
           pkgs,
@@ -71,63 +68,7 @@
           lib,
           ...
         }:
-        let
-          overlayPackages = builtins.intersectAttrs (pkgs.lib.genAttrs
-            # You have to list individual packages here
-            [
-              "dpt-rp1-py"
-              "intel-media-driver"
-              # "r8168"
-            ]
-            (
-              _name:
-              # anything suffices
-              null
-            )
-          ) pkgs;
-        in
         {
-          _module.args.pkgs = nixpkgs.legacyPackages.${system}.extend overlay;
-
-          packages = {
-            emacs = inputs.emacs-overlay.packages.${system}.emacs-git;
-
-            emacs-pgtk = inputs.emacs-overlay.packages.${system}.emacs-git-pgtk;
-
-            registry = pkgs.callPackage ./registry.nix { };
-
-            apply = pkgs.writeShellScriptBin "apply" ''
-              nix flake update \
-                --extra-experimental-features nix-command \
-                --extra-experimental-features flakes \
-                --inputs-from ${self.outPath}
-            '';
-          } // overlayPackages;
-
-          devShells = {
-            # Add global devShells for scaffolding new projects
-
-            pnpm = pkgs.mkShell {
-              buildInputs = [
-                pkgs.nodejs_latest
-                pkgs.nodePackages_latest.pnpm
-              ];
-            };
-
-            yarn = pkgs.mkShell {
-              buildInputs = [
-                pkgs.nodejs_latest
-                pkgs.yarn
-              ];
-            };
-
-            npm = pkgs.mkShell {
-              buildInputs = [
-                pkgs.nodejs_latest
-              ];
-            };
-          };
-
           checks = lib.mapAttrs' (name: drv: lib.nameValuePair ("build-" + name) drv) self'.packages;
         };
     };
