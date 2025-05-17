@@ -4,9 +4,7 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - 'flake.lock'
-      - 'pkgs/**'
-      - 'emacs.nix'
+      - '**/flake.lock'
 
 jobs:
   subflakes:

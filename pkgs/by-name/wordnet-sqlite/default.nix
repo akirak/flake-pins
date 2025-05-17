@@ -3,20 +3,21 @@
 {
   stdenv,
   sqlite,
+  sources,
 }:
 stdenv.mkDerivation {
   name = "wordnet-sqlite";
 
-  buildInputs = [sqlite];
+  buildInputs = [ sqlite ];
 
-  src = builtins.fetchTarball {
-    url = "https://github.com/rbergmair/wn2sql/releases/download/v0.99.4a/wn2sql-0.99.4a.tar";
-    sha256 = "12dm207y526vbs9jbkij6s63yk7m4gximvvznz9xnip3n4hn7s4r";
-  };
+  src = sources.wn2sql;
 
   schema = ./schema.sql;
 
-  phases = ["buildPhase" "installPhase"];
+  phases = [
+    "buildPhase"
+    "installPhase"
+  ];
 
   files = [
     "word.bz2"
