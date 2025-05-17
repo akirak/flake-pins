@@ -25,7 +25,7 @@ jobs:
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
           accept-flake-config = true
 
-    - uses: cachix/cachix-action@v15
+    - uses: cachix/cachix-action@v16
       with:
         name: akirak
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
@@ -57,7 +57,7 @@ jobs:
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
           accept-flake-config = true
 
-    - uses: cachix/cachix-action@v15
+    - uses: cachix/cachix-action@v16
       with:
         name: akirak
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
@@ -89,7 +89,7 @@ jobs:
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
           accept-flake-config = true
 
-    - uses: cachix/cachix-action@v15
+    - uses: cachix/cachix-action@v16
       with:
         name: akirak
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
