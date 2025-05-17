@@ -67,6 +67,8 @@
         {
           pkgs,
           system,
+          self',
+          lib,
           ...
         }:
         {
@@ -110,6 +112,8 @@
               ];
             };
           };
+
+          checks = lib.mapAttrs' (name: drv: lib.nameValuePair ("build-" + name) drv) self'.packages;
         };
     };
 }
