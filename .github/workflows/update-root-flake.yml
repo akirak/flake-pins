@@ -1,4 +1,4 @@
-name: Update the root flake
+name: Update flake.lock
 on:
   workflow_dispatch:
   schedule:
@@ -7,7 +7,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  registry:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -17,7 +17,14 @@ jobs:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
-      - run: nix flake update
+      - name: Update flake inputs
+        run: |
+          for dir in . deps/flakes deps/non-flakes
+          do
+            cd "$dir"
+            nix flake update
+            cd -
+          done
 
       - uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7
         with:
