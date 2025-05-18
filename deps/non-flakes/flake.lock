@@ -20,11 +20,11 @@
     "ffmpeg": {
       "flake": false,
       "locked": {
-        "lastModified": 1747324481,
-        "narHash": "sha256-JgG7C+amNX54rqEDI8yT76tLEKI18hdVgRvjUIR4LOg=",
+        "lastModified": 1747511079,
+        "narHash": "sha256-E7bm97LgiJ02fsUF4LzO3yei4oXBd6geWemkQFl62ro=",
         "owner": "FFmpeg",
         "repo": "FFmpeg",
-        "rev": "7eaa8c110e830cb831781dad1bba8fe2365176fb",
+        "rev": "0b065663d46a0c38186b78bc91fe4849cd30493b",
         "type": "github"
       },
       "original": {
@@ -81,7 +81,7 @@
     "shippori-mincho-otf": {
       "flake": false,
       "locked": {
-        "lastModified": 1649574870,
+        "lastModified": 1649607270,
         "narHash": "sha256-wGvtGi/k28oR9MqMfZrSmmTgB8C61Vl6lYjDApKcAX4=",
         "type": "tarball",
         "url": "https://fontdasu.com/download/shippori3.zip"
