@@ -41,7 +41,7 @@ let
       '';
     };
 
-  fontPackages = mapAttrs makeFont {
+  customFontPackages = mapAttrs makeFont {
     jetbrains-mono-nerdfont = {
       pattern = "*.ttf";
     };
@@ -60,7 +60,7 @@ let
         cp -r ${sources.${name}} $out
       '';
 
-  zshPlugins = mapAttrs makeZshPlugin {
+  customZshPlugins = mapAttrs makeZshPlugin {
     "zsh-auto-notify" = {
       description = "ZSH plugin that automatically sends out a notification when a long running task has completed.";
       homepage = "https://github.com/MichaelAquilina/zsh-auto-notify";
@@ -84,24 +84,30 @@ let
   };
 in
 {
-  # pinned packages from external flakes
-  epubinfo = flakePackages.epubinfo.default;
-  squasher = flakePackages.squasher.default;
+  customPackages = {
+    # pinned packages from external flakes
+    # Is it better to declare these as custom packages?
+    epubinfo = flakePackages.epubinfo.default;
+    squasher = flakePackages.squasher.default;
 
-  # a custom wrapper for exiting packages
-  d2-format = callPackage ./by-name/d2-format { };
+    # a custom wrapper for exiting packages
+    d2-format = callPackage ./by-name/d2-format { };
 
-  # a variant of existing packages in nixpkgs
-  ffmpeg-qsv = callPackage ./by-name/ffmpeg/qsv.nix { src = sources.ffmpeg; };
+    # a variant of existing packages in nixpkgs
+    ffmpeg-qsv = callPackage ./by-name/ffmpeg/qsv.nix { src = sources.ffmpeg; };
 
-  # unpackaged in nixpkgs
-  github-linguist = callPackage ./by-name/github-linguist { };
+    # unpackaged in nixpkgs
+    github-linguist = callPackage ./by-name/github-linguist { };
+  };
 
-  # data packages
-  wordnet-sqlite = callPackage ./by-name/wordnet-sqlite { inherit sources; };
+  customDataPackages = {
+    # data packages
+    wordnet-sqlite = callPackage ./by-name/wordnet-sqlite { inherit sources; };
+  };
+
+  # Explicitly declare as custom packages.
+  inherit customFontPackages customZshPlugins;
 }
-// fontPackages
-// zshPlugins
 // (lib.optionalAttrs stdenv.isLinux (overrideSources [
   "dpt-rp1-py"
   "intel-media-driver"
