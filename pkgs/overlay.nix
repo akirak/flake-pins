@@ -98,6 +98,8 @@ in
 
     # unpackaged in nixpkgs
     github-linguist = callPackage ./by-name/github-linguist { };
+
+    codex-cli = callPackage ./by-name/codex-cli { src = sources.codex; };
   };
 
   customDataPackages = {
