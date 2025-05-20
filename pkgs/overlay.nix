@@ -1,3 +1,4 @@
+{ inputs }:
 final: prev:
 let
   inherit (builtins) mapAttrs;
@@ -9,6 +10,17 @@ let
     callPackage
     runCommandLocal
     ;
+
+  # Prevent rebuild of huge packages when the overlay is applied on different
+  # pkgs revisions.
+  pinnedNixosUnstable = import inputs.unstable {
+    inherit system;
+    config.allowUnfree = true;
+  };
+  pinnedNixpkgsUnstable = import inputs.nixpkgs {
+    inherit system;
+    config.allowUnfree = true;
+  };
 
   flakePackages = builtins.mapAttrs (_: outputs: outputs.packages.${system}) (import ../deps/flakes);
 
@@ -94,12 +106,12 @@ in
     d2-format = callPackage ./by-name/d2-format { };
 
     # a variant of existing packages in nixpkgs
-    ffmpeg-qsv = callPackage ./by-name/ffmpeg/qsv.nix { src = sources.ffmpeg; };
+    ffmpeg-qsv = pinnedNixosUnstable.callPackage ./by-name/ffmpeg/qsv.nix { src = sources.ffmpeg; };
 
     # unpackaged in nixpkgs
     github-linguist = callPackage ./by-name/github-linguist { };
 
-    codex-cli = callPackage ./by-name/codex-cli { src = sources.codex; };
+    codex-cli = pinnedNixpkgsUnstable.callPackage ./by-name/codex-cli { src = sources.codex; };
   };
 
   customDataPackages = {
