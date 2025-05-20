@@ -16,6 +16,10 @@
       url = "https://github.com/rbergmair/wn2sql/releases/download/v0.99.4a/wn2sql-0.99.4a.tar";
       flake = false;
     };
+    codex = {
+      url = "github:openai/codex";
+      flake = false;
+    };
 
     # fonts
     jetbrains-mono-nerdfont = {
