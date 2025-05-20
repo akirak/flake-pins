@@ -1,6 +1,8 @@
 { lib, inputs, ... }:
 let
-  overlay = import ../pkgs/overlay.nix;
+  overlay = import ../pkgs/overlay.nix {
+    inherit inputs;
+  };
 
   makeAttrsetsWithNames = names: lib.genAttrs names (_: null);
 
