@@ -3,11 +3,11 @@
     "codex": {
       "flake": false,
       "locked": {
-        "lastModified": 1747946575,
-        "narHash": "sha256-mr/GE1ZmedhXVll5UVWmGhLxMnCuWn7EaXB+sktZ/Ew=",
+        "lastModified": 1748100829,
+        "narHash": "sha256-vC+oOtW8gO3SLnKx/VOf2+SkABmmniGkEMaD4mcRk3k=",
         "owner": "openai",
         "repo": "codex",
-        "rev": "63deb7c36937030f1a53ccffbc7c9045e9e33e9f",
+        "rev": "6b5b184f21504c99eeeee56b9d607eb8576f96db",
         "type": "github"
       },
       "original": {
