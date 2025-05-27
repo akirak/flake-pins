@@ -57,9 +57,6 @@ let
     jetbrains-mono-nerdfont = {
       pattern = "*.ttf";
     };
-    shippori-mincho-otf = {
-      pattern = "*.otf";
-    };
   };
 
   makeZshPlugin =

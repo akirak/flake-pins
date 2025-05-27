@@ -86,26 +86,12 @@
         "ffmpeg": "ffmpeg",
         "intel-media-driver": "intel-media-driver",
         "jetbrains-mono-nerdfont": "jetbrains-mono-nerdfont",
-        "shippori-mincho-otf": "shippori-mincho-otf",
         "wn2sql": "wn2sql",
         "zsh-auto-notify": "zsh-auto-notify",
         "zsh-fast-syntax-highlighting": "zsh-fast-syntax-highlighting",
         "zsh-fzy": "zsh-fzy",
         "zsh-history-filter": "zsh-history-filter",
         "zsh-nix-shell": "zsh-nix-shell"
-      }
-    },
-    "shippori-mincho-otf": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1649607270,
-        "narHash": "sha256-wGvtGi/k28oR9MqMfZrSmmTgB8C61Vl6lYjDApKcAX4=",
-        "type": "tarball",
-        "url": "https://fontdasu.com/download/shippori3.zip"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://fontdasu.com/download/shippori3.zip"
       }
     },
     "wn2sql": {

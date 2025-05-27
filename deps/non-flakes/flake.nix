@@ -26,10 +26,6 @@
       url = "tarball+https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip";
       flake = false;
     };
-    shippori-mincho-otf = {
-      url = "tarball+https://fontdasu.com/download/shippori3.zip";
-      flake = false;
-    };
 
     # zsh plugins
     zsh-auto-notify = {
