@@ -1,5 +1,14 @@
-{ inputs, ... }:
+{ lib, inputs, ... }:
 {
+  flake = {
+    lib = {
+      nix-registry = lib.pipe (lib.importJSON (../registry.json)).flakes [
+        (map ({ from, to }: lib.nameValuePair from.id { inherit from to; }))
+        lib.listToAttrs
+      ];
+    };
+  };
+
   perSystem =
     { pkgs, ... }:
     {
