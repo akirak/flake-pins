@@ -3,11 +3,11 @@
     "codex": {
       "flake": false,
       "locked": {
-        "lastModified": 1752708929,
-        "narHash": "sha256-0n5djOpi3X4VCue5QjhR7w5qK/ibDk6z1xe73ESKTsY=",
+        "lastModified": 1754161506,
+        "narHash": "sha256-WKf4C7H7Dn4Jt0ygeBxVoTW8kDni5igs/CiKMW2JlpY=",
         "owner": "openai",
         "repo": "codex",
-        "rev": "d3dbc104798eb15ab88c71ce8a33d42f78668c96",
+        "rev": "81bb1c9e264095708a01f6326bf8d527a6b2d47b",
         "type": "github"
       },
       "original": {
@@ -53,11 +53,11 @@
     "intel-media-driver": {
       "flake": false,
       "locked": {
-        "lastModified": 1752589248,
-        "narHash": "sha256-hfk2k7HgOZtNohenbK8EG/3xfpnig8K5sQy2Sm0BzaY=",
+        "lastModified": 1754045368,
+        "narHash": "sha256-Z3cDusBY1nH0l/DoYEPoMyeiVTdrLS/74xXZ5hgsD+M=",
         "owner": "intel",
         "repo": "media-driver",
-        "rev": "32a1c55dfe01e20b97bd5f9af4956fa68156a4da",
+        "rev": "3ee15678e547909357482f23f893d5fecbb8d569",
         "type": "github"
       },
       "original": {
