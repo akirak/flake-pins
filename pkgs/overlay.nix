@@ -109,6 +109,10 @@ in
     github-linguist = callPackage ./by-name/github-linguist { };
 
     codex-cli = pinnedNixpkgsUnstable.callPackage ./by-name/codex-cli { src = sources.codex; };
+
+    java-debug-plugin = pinnedNixpkgsUnstable.callPackage ./by-name/java-debug {
+      src = sources.java-debug;
+    };
   };
 
   customDataPackages = {

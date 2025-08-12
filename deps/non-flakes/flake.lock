@@ -66,6 +66,22 @@
         "type": "github"
       }
     },
+    "java-debug": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1751007685,
+        "narHash": "sha256-Bd/4pzP6mC4N5yXIAMhnTUifu2bSrWZatp9T+sRfCj8=",
+        "owner": "microsoft",
+        "repo": "java-debug",
+        "rev": "a1f68f4265458e9386bf16d107c2383b68690e43",
+        "type": "github"
+      },
+      "original": {
+        "owner": "microsoft",
+        "repo": "java-debug",
+        "type": "github"
+      }
+    },
     "jetbrains-mono-nerdfont": {
       "flake": false,
       "locked": {
@@ -85,6 +101,7 @@
         "dpt-rp1-py": "dpt-rp1-py",
         "ffmpeg": "ffmpeg",
         "intel-media-driver": "intel-media-driver",
+        "java-debug": "java-debug",
         "jetbrains-mono-nerdfont": "jetbrains-mono-nerdfont",
         "wn2sql": "wn2sql",
         "zsh-auto-notify": "zsh-auto-notify",

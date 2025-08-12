@@ -20,6 +20,10 @@
       url = "github:openai/codex";
       flake = false;
     };
+    java-debug = {
+      url = "github:microsoft/java-debug";
+      flake = false;
+    };
 
     # fonts
     jetbrains-mono-nerdfont = {
