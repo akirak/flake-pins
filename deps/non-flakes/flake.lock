@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "codex": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1754618513,
-        "narHash": "sha256-Ib+fPXpgZmTO/Yoiwfssi3TkgM0RO/9a35gQgtzGLm4=",
-        "owner": "openai",
-        "repo": "codex",
-        "rev": "431c9299d495ef771288caf0dcf5952c585f7023",
-        "type": "github"
-      },
-      "original": {
-        "owner": "openai",
-        "repo": "codex",
-        "type": "github"
-      }
-    },
     "dpt-rp1-py": {
       "flake": false,
       "locked": {
@@ -81,7 +65,6 @@
     },
     "root": {
       "inputs": {
-        "codex": "codex",
         "dpt-rp1-py": "dpt-rp1-py",
         "ffmpeg": "ffmpeg",
         "intel-media-driver": "intel-media-driver",
