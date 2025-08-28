@@ -37,11 +37,11 @@
     "intel-media-driver": {
       "flake": false,
       "locked": {
-        "lastModified": 1755226001,
-        "narHash": "sha256-B43CZkC4xLZplkkR/sSujfsy0vcBeS5j6bB4PoyhMaU=",
+        "lastModified": 1756205388,
+        "narHash": "sha256-gYnbdgcZmZgz8vWkYRJp95DpWrR/9jjqVWAolKOiOcI=",
         "owner": "intel",
         "repo": "media-driver",
-        "rev": "93d4be36d876a9149cd5d6ad96881981ce1cd460",
+        "rev": "9a9fd8f475a0b78a32aa1cfe3b010df71ab627a1",
         "type": "github"
       },
       "original": {
