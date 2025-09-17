@@ -20,11 +20,11 @@
     "ffmpeg": {
       "flake": false,
       "locked": {
-        "lastModified": 1755038558,
-        "narHash": "sha256-9SJ2r9ybjasCh3oCRAWz2h7yDdUfK/BSXbj/rCYR+Ww=",
+        "lastModified": 1758048976,
+        "narHash": "sha256-Ofz0HFIopApNyC8lSXPolLsTkfa7e0qTsV0oCkAaxvI=",
         "owner": "FFmpeg",
         "repo": "FFmpeg",
-        "rev": "1b48158a23f1f2d4d5bc6a8de60b7fc049061da2",
+        "rev": "ab0545969279dc832d431500be11f61e3dadcf91",
         "type": "github"
       },
       "original": {
@@ -37,11 +37,11 @@
     "intel-media-driver": {
       "flake": false,
       "locked": {
-        "lastModified": 1756817505,
-        "narHash": "sha256-rMQmX/o1DXGa3bKA3ZbkGh+3VKcb7KcIK8nwxvPwfVM=",
+        "lastModified": 1758059331,
+        "narHash": "sha256-S/nsQGcPAZL7Fl7F3feS/F1tJMybkfsCe+9sVj91038=",
         "owner": "intel",
         "repo": "media-driver",
-        "rev": "c5362b5dfb575d4f112864d0d68e35a230e54ac9",
+        "rev": "b9d0d9c3b53107e1d525d0ec3f6f68a7eeed41c0",
         "type": "github"
       },
       "original": {
