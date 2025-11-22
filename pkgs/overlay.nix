@@ -103,7 +103,9 @@ in
     d2-format = callPackage ./by-name/d2-format { };
 
     # a variant of existing packages in nixpkgs
-    ffmpeg-qsv = pinnedNixosUnstable.callPackage ./by-name/ffmpeg/qsv.nix { src = sources.ffmpeg; };
+
+    # deprecated QSV build for ffmpeg
+    # ffmpeg-qsv = pinnedNixosUnstable.callPackage ./by-name/ffmpeg/qsv.nix { src = sources.ffmpeg; };
 
     # unpackaged in nixpkgs
     github-linguist = callPackage ./by-name/github-linguist { };
