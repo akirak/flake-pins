@@ -9,11 +9,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1754961102,
-        "narHash": "sha256-nXqqDCE/OfRlnDSOTOa6uwYMV4HZugv+tD6tVyEYGQY=",
+        "lastModified": 1763691319,
+        "narHash": "sha256-VWimekERNPFwQ2WsHjCCCn2xSAKdD+NnS22kTqrrG2U=",
         "owner": "akirak",
         "repo": "epubinfo",
-        "rev": "13cc174025331ec6c15ea4d63a43f90d1a68e076",
+        "rev": "794b8aed6d522e6f2eca882a94509b7419b1859f",
         "type": "github"
       },
       "original": {
