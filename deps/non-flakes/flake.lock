@@ -34,22 +34,6 @@
         "type": "github"
       }
     },
-    "intel-media-driver": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1764238883,
-        "narHash": "sha256-/9QsVJrdMntI3+sijqaQpYwGuSjT2rrSF0keXFcPCA0=",
-        "owner": "intel",
-        "repo": "media-driver",
-        "rev": "29ff2b055e218fbf51cc3e599eca8b2a3b7b999f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "intel",
-        "repo": "media-driver",
-        "type": "github"
-      }
-    },
     "jetbrains-mono-nerdfont": {
       "flake": false,
       "locked": {
@@ -67,7 +51,6 @@
       "inputs": {
         "dpt-rp1-py": "dpt-rp1-py",
         "ffmpeg": "ffmpeg",
-        "intel-media-driver": "intel-media-driver",
         "jetbrains-mono-nerdfont": "jetbrains-mono-nerdfont",
         "wn2sql": "wn2sql",
         "zsh-auto-notify": "zsh-auto-notify",

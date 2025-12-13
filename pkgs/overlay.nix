@@ -121,5 +121,4 @@ in
 }
 // (lib.optionalAttrs stdenv.isLinux (overrideSources [
   "dpt-rp1-py"
-  "intel-media-driver"
 ]))

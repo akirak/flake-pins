@@ -4,10 +4,6 @@
       url = "github:akirak/dpt-rp1-py/nixpkgs-workaround";
       flake = false;
     };
-    intel-media-driver = {
-      url = "github:intel/media-driver";
-      flake = false;
-    };
     ffmpeg = {
       url = "github:FFmpeg/FFmpeg/release/7.1";
       flake = false;
