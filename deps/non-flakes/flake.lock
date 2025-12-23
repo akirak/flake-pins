@@ -20,11 +20,11 @@
     "ffmpeg": {
       "flake": false,
       "locked": {
-        "lastModified": 1765310510,
-        "narHash": "sha256-wGd1Y7DZT5bbGly4bsy074bcVL4+FInnd5ee1WPBGNo=",
+        "lastModified": 1765912776,
+        "narHash": "sha256-EJi+yPxOAiss0HGnl0/lvzGi/Gn3CbwYjAalbqBJt+s=",
         "owner": "FFmpeg",
         "repo": "FFmpeg",
-        "rev": "416962282f9c30713d9863ed70febecd11e7f92a",
+        "rev": "dac2a1116d72423b577311e84c65cacf516e6aed",
         "type": "github"
       },
       "original": {
