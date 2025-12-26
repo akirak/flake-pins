@@ -1,6 +1,4 @@
 # ffmpeg build for intel GPU. Supports *_qsv encoders
-#
-# Deprecated, since ffmpeg has bumped to 8.0
 {
   ffmpeg,
   vpl-gpu-rt,
