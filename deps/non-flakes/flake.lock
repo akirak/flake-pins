@@ -17,23 +17,6 @@
         "type": "github"
       }
     },
-    "ffmpeg": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1765912776,
-        "narHash": "sha256-EJi+yPxOAiss0HGnl0/lvzGi/Gn3CbwYjAalbqBJt+s=",
-        "owner": "FFmpeg",
-        "repo": "FFmpeg",
-        "rev": "dac2a1116d72423b577311e84c65cacf516e6aed",
-        "type": "github"
-      },
-      "original": {
-        "owner": "FFmpeg",
-        "ref": "release/7.1",
-        "repo": "FFmpeg",
-        "type": "github"
-      }
-    },
     "jetbrains-mono-nerdfont": {
       "flake": false,
       "locked": {
@@ -50,7 +33,6 @@
     "root": {
       "inputs": {
         "dpt-rp1-py": "dpt-rp1-py",
-        "ffmpeg": "ffmpeg",
         "jetbrains-mono-nerdfont": "jetbrains-mono-nerdfont",
         "wn2sql": "wn2sql",
         "zsh-auto-notify": "zsh-auto-notify",

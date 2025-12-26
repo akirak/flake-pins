@@ -4,10 +4,6 @@
       url = "github:akirak/dpt-rp1-py/nixpkgs-workaround";
       flake = false;
     };
-    ffmpeg = {
-      url = "github:FFmpeg/FFmpeg/release/7.1";
-      flake = false;
-    };
     wn2sql = {
       url = "https://github.com/rbergmair/wn2sql/releases/download/v0.99.4a/wn2sql-0.99.4a.tar";
       flake = false;

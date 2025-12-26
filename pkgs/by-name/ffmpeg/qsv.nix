@@ -1,17 +1,8 @@
 # ffmpeg build for intel GPU. Supports *_qsv encoders
-#
-# Deprecated, since ffmpeg has bumped to 8.0
 {
   ffmpeg,
-  vpl-gpu-rt,
-  lib,
-  src,
 }:
-# Switch back to the released revision once the VPL support
-# becomes stable. I will keep updating until 7.2 or 8.0 is
-# released.
-assert (lib.versions.majorMinor ffmpeg.version == "7.1");
-(ffmpeg.override {
+ffmpeg.override {
   # https://www.reddit.com/r/IntelArc/comments/1at6gk0/comment/kv8zaus/
   # https://trac.ffmpeg.org/wiki/Hardware/QuickSync
   withDrm = true;
@@ -30,11 +21,4 @@ assert (lib.versions.majorMinor ffmpeg.version == "7.1");
   withRuntimeCPUDetection = true;
   withVaapi = true;
   withVpl = true;
-}).overrideAttrs
-  (old: {
-    inherit src;
-    patches = [ ];
-    buildInputs = old.buildInputs ++ [
-      vpl-gpu-rt
-    ];
-  })
+}
