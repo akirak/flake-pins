@@ -1,10 +1,8 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    home-manager-stable.url = "github:nix-community/home-manager/release-25.11";
     home-manager-unstable.url = "github:nix-community/home-manager";
 
     # Needed to provide Emacs executables from default.nix
