@@ -1,22 +1,5 @@
 {
   "nodes": {
-    "dpt-rp1-py": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1732980197,
-        "narHash": "sha256-Hb89cqx744pDxm//Lm3di9cIIFoBVyownXjY5QAk3lc=",
-        "owner": "akirak",
-        "repo": "dpt-rp1-py",
-        "rev": "ea470e51bd68138926860856e80902477770ec71",
-        "type": "github"
-      },
-      "original": {
-        "owner": "akirak",
-        "ref": "nixpkgs-workaround",
-        "repo": "dpt-rp1-py",
-        "type": "github"
-      }
-    },
     "jetbrains-mono-nerdfont": {
       "flake": false,
       "locked": {
@@ -32,7 +15,6 @@
     },
     "root": {
       "inputs": {
-        "dpt-rp1-py": "dpt-rp1-py",
         "jetbrains-mono-nerdfont": "jetbrains-mono-nerdfont",
         "wn2sql": "wn2sql",
         "zsh-auto-notify": "zsh-auto-notify",

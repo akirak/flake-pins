@@ -1,9 +1,5 @@
 {
   inputs = {
-    dpt-rp1-py = {
-      url = "github:akirak/dpt-rp1-py/nixpkgs-workaround";
-      flake = false;
-    };
     wn2sql = {
       url = "https://github.com/rbergmair/wn2sql/releases/download/v0.99.4a/wn2sql-0.99.4a.tar";
       flake = false;

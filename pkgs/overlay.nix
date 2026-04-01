@@ -117,6 +117,3 @@ in
   # Explicitly declare as custom packages.
   inherit customFontPackages customZshPlugins;
 }
-// (lib.optionalAttrs stdenv.isLinux (overrideSources [
-  "dpt-rp1-py"
-]))

@@ -28,7 +28,6 @@ in
         pkgs.customZshPlugins
         (takePackages pkgs [
           # You have to list individual packages here
-          "dpt-rp1-py"
           "intel-media-driver"
         ])
       ];
