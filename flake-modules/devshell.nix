@@ -8,7 +8,7 @@
         pnpm = pkgs.mkShell {
           buildInputs = [
             pkgs.nodejs_latest
-            pkgs.nodePackages_latest.pnpm
+            pkgs.pnpm
           ];
         };
 
