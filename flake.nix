@@ -19,7 +19,7 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
-    emacs-overlay.url = "github:nix-community/emacs-overlay/322712b1e8685aeceddd6aa781c646a24d14510e";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-builtins.url = "github:emacs-twist/emacs-builtins";
 
     ocaml-overlays.url = "github:nix-ocaml/nix-overlays";
