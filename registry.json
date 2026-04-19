@@ -20,11 +20,11 @@
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1774603792,
-        "narHash": "sha256-hheBnoIWC+IhFUK/hSt2uWJYHERAYfxcsB6osbU6ByY=",
+        "lastModified": 1776591781,
+        "narHash": "sha256-N3P2tFDyAjjCIZr6+7Yl6MN2oqRRsjgbzyQOIfNfFMs=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "322712b1e8685aeceddd6aa781c646a24d14510e",
+        "rev": "0ab23f059a8a22b421a5298aca8b54ddb233935d",
         "type": "github"
       }
     },
