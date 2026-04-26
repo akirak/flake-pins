@@ -99,7 +99,9 @@ in
     epubinfo = flakePackages.epubinfo.default;
     squasher = flakePackages.squasher.default;
 
-    # a custom wrapper for exiting packages
+    pipelight = flakePackages.pipelight.default;
+
+    # a custom wrapper for existing packages
     d2-format = callPackage ./by-name/d2-format { };
 
     # a variant of existing packages in nixpkgs
