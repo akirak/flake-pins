@@ -28,6 +28,9 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
+    tsgo-effect.url = "github:Effect-TS/tsgo";
+    tsgo-effect.inputs.nixpkgsUnstable.follows = "nixpkgs";
+
     systems.url = "github:nix-systems/default";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
@@ -67,7 +70,9 @@
           ...
         }:
         {
-          checks = lib.mapAttrs' (name: drv: lib.nameValuePair ("build-" + name) drv) self'.packages;
+          checks = lib.mapAttrs' (name: drv: lib.nameValuePair ("build-" + name) drv) self'.packages // {
+            tsgo-effect = inputs.tsgo-effect.packages.${system}.default;
+          };
         };
     };
 }

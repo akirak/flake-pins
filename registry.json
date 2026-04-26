@@ -156,6 +156,20 @@
     },
     {
       "from": {
+        "id": "tsgo-effect",
+        "type": "indirect"
+      },
+      "to": {
+        "lastModified": 1776752258,
+        "narHash": "sha256-bCP+ZyJKAr95QgYCRB8yQHc2BOfWS5rNO4qEtiFQ4tw=",
+        "owner": "Effect-TS",
+        "repo": "tsgo",
+        "rev": "18ec19f768d8c251924a5dd628b99b6e43696c81",
+        "type": "github"
+      }
+    },
+    {
+      "from": {
         "id": "unstable",
         "type": "indirect"
       },
