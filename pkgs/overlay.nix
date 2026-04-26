@@ -99,6 +99,8 @@ in
     epubinfo = flakePackages.epubinfo.default;
     squasher = flakePackages.squasher.default;
 
+    pipelight = flakePackages.pipelight.default;
+
     # a custom wrapper for exiting packages
     d2-format = callPackage ./by-name/d2-format { };
 
