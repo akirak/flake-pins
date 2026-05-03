@@ -100,6 +100,7 @@ in
     squasher = flakePackages.squasher.default;
 
     pipelight = flakePackages.pipelight.default;
+    rustfs = flakePackages.rustfs.default;
 
     # a custom wrapper for existing packages
     d2-format = callPackage ./by-name/d2-format { };
