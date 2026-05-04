@@ -5,12 +5,6 @@
       flake = false;
     };
 
-    # fonts
-    jetbrains-mono-nerdfont = {
-      url = "tarball+https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip";
-      flake = false;
-    };
-
     # zsh plugins
     zsh-auto-notify = {
       url = "github:MichaelAquilina/zsh-auto-notify";

@@ -35,29 +35,25 @@ let
       }
     );
 
-  makeFont =
-    name:
-    { pattern }:
-    stdenv.mkDerivation {
-      inherit name;
+  # There is currently no custom font package, so this function is unused.
 
-      src = sources.${name};
+  # makeFont =
+  #   name:
+  #   { pattern }:
+  #   stdenv.mkDerivation {
+  #     inherit name;
 
-      dontBuild = true;
+  #     src = sources.${name};
 
-      installPhase = ''
-        fontDir=$out/share/fonts/truetype
-        mkdir -p $fontDir
-        ls
-        cp ${pattern} $fontDir
-      '';
-    };
+  #     dontBuild = true;
 
-  customFontPackages = mapAttrs makeFont {
-    jetbrains-mono-nerdfont = {
-      pattern = "*.ttf";
-    };
-  };
+  #     installPhase = ''
+  #       fontDir=$out/share/fonts/truetype
+  #       mkdir -p $fontDir
+  #       ls
+  #       cp ${pattern} $fontDir
+  #     '';
+  #   };
 
   makeZshPlugin =
     name: meta:
@@ -118,5 +114,6 @@ in
   };
 
   # Explicitly declare as custom packages.
-  inherit customFontPackages customZshPlugins;
+  inherit customZshPlugins;
+  # inherit customFontPackages;
 }

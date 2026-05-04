@@ -1,21 +1,7 @@
 {
   "nodes": {
-    "jetbrains-mono-nerdfont": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1580029501,
-        "narHash": "sha256-I8RJMKwhDE+aPbSMdmS9Nb4l14pkldqxQRGAXI727bc=",
-        "type": "tarball",
-        "url": "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip"
-      }
-    },
     "root": {
       "inputs": {
-        "jetbrains-mono-nerdfont": "jetbrains-mono-nerdfont",
         "wn2sql": "wn2sql",
         "zsh-auto-notify": "zsh-auto-notify",
         "zsh-fast-syntax-highlighting": "zsh-fast-syntax-highlighting",
