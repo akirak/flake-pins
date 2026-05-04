@@ -24,7 +24,7 @@ in
       packagesFromOverlay = lib.mergeAttrsList [
         pkgs.customPackages
         pkgs.customDataPackages
-        pkgs.customFontPackages
+        # pkgs.customFontPackages
         pkgs.customZshPlugins
         (takePackages pkgs [
           # You have to list individual packages here
