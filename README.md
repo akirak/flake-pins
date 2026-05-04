@@ -2,6 +2,9 @@
 This repository tracks flake inputs so I am ensured to have a consistent set of
 input revisions among multiple projects without having cyclic dependencies
 between flakes.
+
+It also ensures that packages are available in the binary cache (Cachix:
+`akirak`) by building the packages on CI.
 ## Usage
 ### Pinned Flake Registry
 This repository provides a flake registry. You can use the following command to
