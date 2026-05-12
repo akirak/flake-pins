@@ -25,11 +25,11 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1778035564,
-        "narHash": "sha256-XJr1aD7alVflwcyqKhl91KbgxeUGCqiWI5cVJ2gb5Jo=",
+        "lastModified": 1778521986,
+        "narHash": "sha256-KWwXEH/ZgabfbuAd9hQ3qwaNXEpZrRquPNr7MGzbPJA=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "522f0c1535cf260f26485ee96b512ba2df057542",
+        "rev": "832c684b4f4b13ee5357190ed48bbcbfb5488bbe",
         "type": "github"
       },
       "original": {
@@ -113,11 +113,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1778009629,
-        "narHash": "sha256-nUoQtf4Zq7DRYJrfv904hjrxjAlWVP6a1pNNFKx3FCg=",
+        "lastModified": 1778535464,
+        "narHash": "sha256-kkUQYSv70wynJ/DfnGals6r98I6bK3CVNVTN1zbAd7Y=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "00ed86e58bb6979a7921859fd1615d19382eac5c",
+        "rev": "b659c7ffd40fc9e3bb60d420c79c67e769b9f4ab",
         "type": "github"
       },
       "original": {
@@ -194,11 +194,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1778003029,
-        "narHash": "sha256-q/nkKLDtHIyLjZpKhWk3cSK5IYsFqtMd6UtXF3ddjgA=",
+        "lastModified": 1778430510,
+        "narHash": "sha256-Ti+ZBvW6yrWWAg2szExVTwCd4qOJ3KlVr1tFHfyfi8Q=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0c88e1f2bdb93d5999019e99cb0e61e1fe2af4c5",
+        "rev": "8fd9daa3db09ced9700431c5b7ad0e8ba199b575",
         "type": "github"
       },
       "original": {
@@ -242,11 +242,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1777946660,
-        "narHash": "sha256-iw3XDIG6xxk+AZTcawCLHf6i9i4tXRzLZEoV9xhRToQ=",
+        "lastModified": 1778458615,
+        "narHash": "sha256-cY07EsdhBJ8tFXPzDYevgqxRev9ZLxFonuq9wmq5kwg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "bc57abace07689cfd34203aa5fb4027514895987",
+        "rev": "c6e5ca3c836a5f4dd9af9f2c1fc1c38f0fac988a",
         "type": "github"
       },
       "original": {
@@ -279,11 +279,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777859004,
-        "narHash": "sha256-Df085hLNyqhIEeUUtgxHH4TTGWeMGNT31AxbcOOHr7s=",
+        "lastModified": 1778431651,
+        "narHash": "sha256-yjew06zDXRxKO0goqYYvkWpQ1fT3NHjOJ/d7C7gN14M=",
         "owner": "nix-ocaml",
         "repo": "nix-overlays",
-        "rev": "941afbf9aa4e5a7780a8224726c271ced2d9de16",
+        "rev": "261ab996dd679c3887f7a51579f0c311194db750",
         "type": "github"
       },
       "original": {
@@ -316,11 +316,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777950921,
-        "narHash": "sha256-NpOgt8ISaHTDNJZjNUfwFfbieKfRXzab4WKM31gZCGA=",
+        "lastModified": 1778469574,
+        "narHash": "sha256-NTZzJ7xJvMXOonYqut3WLUhryeZj5QuuL0ANcqS7d30=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "366ea19e0e55b768f74b7a0b2a20f847e7ae828d",
+        "rev": "4852a8aa041c94af55e136cde5b8b6d42c3563e8",
         "type": "github"
       },
       "original": {
@@ -369,11 +369,11 @@
         "typescript-src": "typescript-src"
       },
       "locked": {
-        "lastModified": 1777468301,
-        "narHash": "sha256-QxJfRUEodj2fYGVVqt+A9LEmrWzZoGos23W3LN499dE=",
+        "lastModified": 1778492624,
+        "narHash": "sha256-eU1v/3k/24XUTuiItjWA7hHUbqxV7+I4zj5egnjibQ0=",
         "owner": "Effect-TS",
         "repo": "tsgo",
-        "rev": "ad691f162647cfdd217748c570642137fa110285",
+        "rev": "b536cd38bbee9861b56497fc29103ca6f1f840bd",
         "type": "github"
       },
       "original": {
@@ -385,17 +385,17 @@
     "typescript-go-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1777424922,
-        "narHash": "sha256-ebjX+1+9axEqsnZXCRZSumA38gPNdmoz98tMt2oftN4=",
+        "lastModified": 1778353333,
+        "narHash": "sha256-DB1O4gtHqe6lUrp0i0Jms6AWqk/Cgxc6hJ8Jm6jS/fo=",
         "owner": "microsoft",
         "repo": "typescript-go",
-        "rev": "56ab4af421576f5326e0c08be5ac67149c053618",
+        "rev": "092b34f534182baf2875887c20ffed2177f14d92",
         "type": "github"
       },
       "original": {
         "owner": "microsoft",
         "repo": "typescript-go",
-        "rev": "56ab4af421576f5326e0c08be5ac67149c053618",
+        "rev": "092b34f534182baf2875887c20ffed2177f14d92",
         "type": "github"
       }
     },
