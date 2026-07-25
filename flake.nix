@@ -32,7 +32,7 @@
       url = "github:Effect-TS/tsgo";
       inputs = {
         nixpkgsUnstable.follows = "nixpkgs";
-        typescript-go.url = "git+https://github.com/microsoft/typescript-go?submodules=1";
+        typescript-go-src.url = "git+https://github.com/microsoft/typescript-go?submodules=1";
       };
     };
 
