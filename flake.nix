@@ -28,13 +28,8 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
-    tsgo-effect = {
-      url = "github:Effect-TS/tsgo";
-      inputs = {
-        nixpkgsUnstable.follows = "nixpkgs";
-        typescript-go-src.url = "git+https://github.com/microsoft/typescript-go?submodules=1";
-      };
-    };
+    tsgo-effect.url = "github:Effect-TS/tsgo";
+    tsgo-effect.inputs.nixpkgsUnstable.follows = "nixpkgs";
 
     systems.url = "github:nix-systems/default";
     flake-parts.url = "github:hercules-ci/flake-parts";
