@@ -19,8 +19,10 @@ jobs:
 
       - name: Update flake inputs
         run: |
+          nix flake update
+
           root="$PWD"
-          for dir in . deps/flakes deps/non-flakes
+          for dir in deps/flakes deps/non-flakes
           do
             cd "$dir"
             nix flake update --inputs-from "path:$root"
