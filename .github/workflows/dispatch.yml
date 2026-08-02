@@ -8,6 +8,9 @@ on:
     paths:
     - registry.json
 
+permissions:
+  contents: read
+
 jobs:
   dispatch:
     strategy:

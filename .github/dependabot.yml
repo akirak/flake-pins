@@ -7,3 +7,9 @@ updates:
     labels:
       - "automation"
       - "actions"
+    cooldown:
+      default-days: 7
+      semver-major: 14
+      semver-minor: 7
+      semver-patch: 3
+      dev: 0
