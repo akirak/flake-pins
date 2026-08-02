@@ -6,94 +6,98 @@ on:
     paths:
       - '**/flake.lock'
 
+permissions:
+  contents: read
+
 jobs:
   emacs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         output:
-        - emacs
-        - emacs-pgtk
+          - emacs
+          - emacs-pgtk
     steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v5
-      with:
-        path: flake-pins
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v5
+        with:
+          path: flake-pins
+          persist-credentials: false
 
-    - uses: cachix/install-nix-action@630ae543ea3a38a9a4166f03376c02c50f408342 # v31.11.0
-      with:
-        extra_nix_config: |
-          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-          accept-flake-config = true
+      - uses: nixbuild/nix-quick-install-action@9f63be77f412a248c9d9a65a4c82cf066cdf8f0c # v35
+        with:
+          nix_conf: |
+            accept-flake-config = true
 
-    - uses: cachix/cachix-action@5f2d7c5294214f71b873db4b969586b980625e71 # v17
-      with:
-        name: akirak
-        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-        pushFilter: '-source$'
+      - uses: cachix/cachix-action@5f2d7c5294214f71b873db4b969586b980625e71 # v17
+        with:
+          name: akirak
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          pushFilter: '-source$'
 
-    - name: Build Emacs executable
-      working-directory: ./flake-pins
-      run: |
-        if [[ $(nix path-info "$(nix eval .#${{ matrix.output }}.outPath --raw)" --json \
-                    --store https://nix-community.cachix.org 2>/dev/null \
-                    | jq length) = 0 ]]
-        then
-          nix build .#${{ matrix.output }} --print-build-logs
-        else
-          echo "The derivation has been already built, so skipping nix build"
-        fi
+      - name: Build Emacs executable
+        working-directory: ./flake-pins
+        run: |
+          if [[ $(nix path-info "$(nix eval .#${{ matrix.output }}.outPath --raw)" --json \
+                      --store https://nix-community.cachix.org 2>/dev/null \
+                      | jq length) = 0 ]]
+          then
+            nix build .#${{ matrix.output }} --print-build-logs
+          else
+            echo "The derivation has been already built, so skipping nix build"
+          fi
 
   homelab:
     runs-on: ubuntu-latest
     needs: ['emacs']
     steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v5
-      with:
-        path: flake-pins
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v5
+        with:
+          path: flake-pins
+          persist-credentials: false
 
-    - uses: cachix/install-nix-action@630ae543ea3a38a9a4166f03376c02c50f408342 # v31.11.0
-      with:
-        extra_nix_config: |
-          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-          accept-flake-config = true
+      - uses: nixbuild/nix-quick-install-action@9f63be77f412a248c9d9a65a4c82cf066cdf8f0c # v35
+        with:
+          nix_conf: |
+            accept-flake-config = true
 
-    - uses: cachix/cachix-action@5f2d7c5294214f71b873db4b969586b980625e71 # v17
-      with:
-        name: akirak
-        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-        pushFilter: '-source$'
+      - uses: cachix/cachix-action@5f2d7c5294214f71b873db4b969586b980625e71 # v17
+        with:
+          name: akirak
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          pushFilter: '-source$'
 
-    - name: Check out homelab
-      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v5
-      with:
-        repository: akirak/homelab
-        path: homelab
+      - name: Check out homelab
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v5
+        with:
+          repository: akirak/homelab
+          path: homelab
+          persist-credentials: false
 
-    # The inputs of emacs-config aren't correctly updated here.
-    - name: Check the homelab flake (before updating)
-      run: |
-        nix flake check --print-build-logs --show-trace
-      working-directory: ./homelab
-      # This step can fail due to missing revisions on the default branch of
-      # GNU/nonGNU ELPA. As a workaround, errors are allowed in this step.
-      continue-on-error: true
+      # The inputs of emacs-config aren't correctly updated here.
+      - name: Check the homelab flake (before updating)
+        run: |
+          nix flake check --print-build-logs --show-trace
+        working-directory: ./homelab
+        # This step can fail due to missing revisions on the default branch of
+        # GNU/nonGNU ELPA. As a workaround, errors are allowed in this step.
+        continue-on-error: true
 
-    # The inputs of emacs-config aren't correctly updated here.
-    - name: Update the homelab flake
-      run: |
-        nix flake update --inputs-from ../flake-pins \
-        && nix flake update emacs-config \
-             emacs-config/gnu-elpa \
-             emacs-config/nongnu-elpa \
-             emacs-config/melpa \
-             emacs-config/epkgs \
-        && nix flake update emacs-config/flake-pins \
-            --override-input emacs-config/flake-pins ../flake-pins
+      # The inputs of emacs-config aren't correctly updated here.
+      - name: Update the homelab flake
+        run: |
+          nix flake update --inputs-from ../flake-pins \
+          && nix flake update emacs-config \
+               emacs-config/gnu-elpa \
+               emacs-config/nongnu-elpa \
+               emacs-config/melpa \
+               emacs-config/epkgs \
+          && nix flake update emacs-config/flake-pins \
+              --override-input emacs-config/flake-pins ../flake-pins
 
-      working-directory: ./homelab
+        working-directory: ./homelab
 
-    # The inputs of emacs-config aren't correctly updated here.
-    - name: Check the homelab flake (after updating)
-      run: |
-        nix flake check --print-build-logs --show-trace
-      working-directory: ./homelab
+      # The inputs of emacs-config aren't correctly updated here.
+      - name: Check the homelab flake (after updating)
+        run: |
+          nix flake check --print-build-logs --show-trace
+        working-directory: ./homelab
