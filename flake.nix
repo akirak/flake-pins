@@ -70,9 +70,11 @@
           ...
         }:
         {
-          checks = lib.mapAttrs' (name: drv: lib.nameValuePair ("build-" + name) drv) self'.packages // {
+          packages = {
             tsgo-effect = inputs.tsgo-effect.packages.${system}.default;
           };
+
+          checks = lib.mapAttrs' (name: drv: lib.nameValuePair ("build-" + name) drv) self'.packages;
         };
     };
 }
