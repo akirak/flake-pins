@@ -31,7 +31,7 @@
     tsgo-effect.url = "github:Effect-TS/tsgo";
     tsgo-effect.inputs.nixpkgsUnstable.follows = "nixpkgs";
 
-    systems.url = "github:nix-systems/default";
+    systems.url = "github:nix-systems/default/future-26.11";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
