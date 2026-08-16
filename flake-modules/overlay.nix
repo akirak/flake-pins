@@ -30,6 +30,10 @@ in
           # You have to list individual packages here
           "intel-media-driver"
         ])
+        {
+          # Expose for internal projects
+          effect-tsgo = inputs.tsgo-effect.packages.${system}.default;
+        }
       ];
     in
     {
