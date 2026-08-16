@@ -28,4 +28,4 @@ jobs:
           pushFilter: '-source$'
 
       - name: Check the packages
-        run: nix flake check
+        run: nix flake check -L
