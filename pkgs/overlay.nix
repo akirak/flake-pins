@@ -1,15 +1,16 @@
 { inputs }:
 final: prev:
 let
-  inherit (builtins) mapAttrs;
+  inherit (builtins) mapAttrs hasAttr;
 
   inherit (prev)
     lib
     stdenv
-    system
     callPackage
     runCommandLocal
     ;
+
+  inherit (prev.stdenv.hostPlatform) system;
 
   # Prevent rebuild of huge packages when the overlay is applied on different
   # pkgs revisions.
@@ -22,7 +23,13 @@ let
     config.allowUnfree = true;
   };
 
-  flakePackages = builtins.mapAttrs (_: outputs: outputs.packages.${system}) (import ../deps/flakes);
+  flakePackages = builtins.mapAttrs (
+    _: outputs:
+    let
+      packages = outputs.packages;
+    in
+    if hasAttr system packages then packages.${system} else { }
+  ) (import ../deps/flakes);
 
   sources = import ../deps/non-flakes;
 
@@ -97,6 +104,7 @@ in
 
     pipelight = flakePackages.pipelight.default;
     rustfs = flakePackages.rustfs.default;
+    capnp-ls = lib.mkIf (flakePackages ? capnp-ls) flakePackages.capnp-ls.default;
 
     # a custom wrapper for existing packages
     d2-format = callPackage ./by-name/d2-format { };

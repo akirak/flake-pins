@@ -1,5 +1,44 @@
 {
   "nodes": {
+    "capnp-ls": {
+      "inputs": {
+        "capnproto": "capnproto",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787764245,
+        "narHash": "sha256-3v3N5RLL127FvuqPdf2CbYMCSFL/MCfRkB1baydSqQs=",
+        "owner": "akirak",
+        "repo": "capnp-ls",
+        "rev": "990fd3ebcc88615e965b1f3f9b0a035ef10db58b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "akirak",
+        "ref": "develop",
+        "repo": "capnp-ls",
+        "type": "github"
+      }
+    },
+    "capnproto": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773323995,
+        "narHash": "sha256-CuhKOJwU+QG25lRR8F7ina+DV45ZlLzg/UJ2swf2tZ0=",
+        "owner": "capnproto",
+        "repo": "capnproto",
+        "rev": "8b892a8a11a632f5d52b877a49728808a142379a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "capnproto",
+        "ref": "v1.4.0",
+        "repo": "capnproto",
+        "type": "github"
+      }
+    },
     "epubinfo": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -235,6 +274,7 @@
     },
     "root": {
       "inputs": {
+        "capnp-ls": "capnp-ls",
         "epubinfo": "epubinfo",
         "nixpkgs": "nixpkgs_3",
         "pipelight": "pipelight",
