@@ -10,6 +10,10 @@
       url = "github:rustfs/rustfs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    capnp-ls = {
+      url = "github:akirak/capnp-ls/develop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = _: { };
