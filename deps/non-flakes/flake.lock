@@ -42,11 +42,11 @@
     "zsh-fast-syntax-highlighting": {
       "flake": false,
       "locked": {
-        "lastModified": 1752660993,
-        "narHash": "sha256-ZihUL4JAVk9V+IELSakytlb24BvEEJ161CQEHZYYoSA=",
+        "lastModified": 1788160444,
+        "narHash": "sha256-gXTJv+k4OSgwiM7vy91v7tLLHre0f5XeSor3n/b2euI=",
         "owner": "zdharma-continuum",
         "repo": "fast-syntax-highlighting",
-        "rev": "3d574ccf48804b10dca52625df13da5edae7f553",
+        "rev": "4672ad5dd9ad68a7effc1476d65afb7c584ce2b3",
         "type": "github"
       },
       "original": {
