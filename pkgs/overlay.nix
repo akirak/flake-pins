@@ -102,7 +102,6 @@ in
     epubinfo = flakePackages.epubinfo.default;
     squasher = flakePackages.squasher.default;
 
-    pipelight = flakePackages.pipelight.default;
     rustfs = flakePackages.rustfs.default;
     capnp-ls = lib.mkIf (flakePackages ? capnp-ls) flakePackages.capnp-ls.default;
 
