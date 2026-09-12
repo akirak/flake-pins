@@ -173,50 +173,7 @@
         "capnp-ls": "capnp-ls",
         "epubinfo": "epubinfo",
         "nixpkgs": "nixpkgs_3",
-        "rustfs": "rustfs",
         "squasher": "squasher"
-      }
-    },
-    "rust-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "rustfs",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1787993548,
-        "narHash": "sha256-+IAEnmmx5YIhUWo0lp15jLLHchnXo5yKgWsi6C6Cf+0=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "996e9b0b019a4a9eb9e9a5641aefa06d801b5895",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rustfs": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "rust-overlay": "rust-overlay"
-      },
-      "locked": {
-        "lastModified": 1788590585,
-        "narHash": "sha256-NyyER7DQMYv2VQRjk07i/2exVke/2502lU+LnCn6Puc=",
-        "owner": "rustfs",
-        "repo": "rustfs",
-        "rev": "a6589c19e3efbfbd386fed2db0aa78e9f21a2f44",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rustfs",
-        "repo": "rustfs",
-        "type": "github"
       }
     },
     "squasher": {

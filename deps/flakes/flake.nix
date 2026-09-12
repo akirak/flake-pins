@@ -5,10 +5,6 @@
 
     epubinfo.url = "github:akirak/epubinfo";
     squasher.url = "github:akirak/squasher";
-    rustfs = {
-      url = "github:rustfs/rustfs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     capnp-ls = {
       url = "github:akirak/capnp-ls/develop";
       inputs.nixpkgs.follows = "nixpkgs";

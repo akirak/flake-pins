@@ -102,7 +102,6 @@ in
     epubinfo = flakePackages.epubinfo.default;
     squasher = flakePackages.squasher.default;
 
-    rustfs = flakePackages.rustfs.default;
     capnp-ls = lib.mkIf (flakePackages ? capnp-ls) flakePackages.capnp-ls.default;
 
     # a custom wrapper for existing packages
