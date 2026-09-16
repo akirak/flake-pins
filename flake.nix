@@ -1,7 +1,12 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # Same as the official flaie registry
+    nixpkgs-unstable.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
+    nixos-unstable.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
+    nixos-unstable-small.url = "https://channels.nixos.org/nixos-unstable-small/nixexprs.tar.zst";
+
+    nixpkgs.follows = "nixpkgs-unstable";
+    unstable.follows = "nixos-unstable";
 
     home-manager-unstable.url = "github:nix-community/home-manager";
 

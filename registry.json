@@ -100,16 +100,54 @@
     },
     {
       "from": {
+        "id": "nixos-unstable",
+        "type": "indirect"
+      },
+      "to": {
+        "lastModified": 1789426278,
+        "narHash": "sha256-LMzzTWExGdJ1S8U3IP5egkZEtyMswAwYowTAxIlkEZs=",
+        "rev": "efe6f071ede9d21c37462d2d6682d5e670099684",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1074086.efe6f071ede9/nixexprs.tar.zst"
+      }
+    },
+    {
+      "from": {
+        "id": "nixos-unstable-small",
+        "type": "indirect"
+      },
+      "to": {
+        "lastModified": 1789524109,
+        "narHash": "sha256-4zYZpdG5AizAB5DbRPEDBaT4PzRG/VPHB3zfLhz4qRk=",
+        "rev": "be3dab5b1a3c41ed2db86093b9f4e048305630b7",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable-small/nixos-26.11pre1074683.be3dab5b1a3c/nixexprs.tar.zst"
+      }
+    },
+    {
+      "from": {
         "id": "nixpkgs",
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1789073787,
-        "narHash": "sha256-xfX/toC2QV707s06GbP4II/TxYF0fNQj7s5/LClNDKc=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "aff8a0b28396750446e5537a96461bc4facdb287",
-        "type": "github"
+        "lastModified": 1789370336,
+        "narHash": "sha256-obwZbWHP7htCIoq2Z0g/uTMcEgN6yqcMNIcOMe6P2qI=",
+        "rev": "c7def046b9a883d46974757852106483d741586f",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1073483.c7def046b9a8/nixexprs.tar.zst"
+      }
+    },
+    {
+      "from": {
+        "id": "nixpkgs-unstable",
+        "type": "indirect"
+      },
+      "to": {
+        "lastModified": 1789370336,
+        "narHash": "sha256-obwZbWHP7htCIoq2Z0g/uTMcEgN6yqcMNIcOMe6P2qI=",
+        "rev": "c7def046b9a883d46974757852106483d741586f",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1073483.c7def046b9a8/nixexprs.tar.zst"
       }
     },
     {
@@ -174,12 +212,11 @@
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1789006805,
-        "narHash": "sha256-xB8mKMOx1IA9vTDNLmJZ6n4wCMq/cuWBBOzGCRnqxrU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "8ce4ef6cb6f871616146b9fe26d2a5ae594e94fe",
-        "type": "github"
+        "lastModified": 1789426278,
+        "narHash": "sha256-LMzzTWExGdJ1S8U3IP5egkZEtyMswAwYowTAxIlkEZs=",
+        "rev": "efe6f071ede9d21c37462d2d6682d5e670099684",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1074086.efe6f071ede9/nixexprs.tar.zst"
       }
     }
   ],
