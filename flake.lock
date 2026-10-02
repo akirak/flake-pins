@@ -333,7 +333,8 @@
         "tsgo-effect": "tsgo-effect",
         "unstable": [
           "nixos-unstable"
-        ]
+        ],
+        "unstable-202609": "unstable-202609"
       }
     },
     "rust-overlay": {
@@ -424,6 +425,19 @@
         "repo": "TypeScript",
         "rev": "0681ef7fa3a2378ccf49645b6d5b7463bdca74bb",
         "type": "github"
+      }
+    },
+    "unstable-202609": {
+      "locked": {
+        "lastModified": 1789426278,
+        "narHash": "sha256-LMzzTWExGdJ1S8U3IP5egkZEtyMswAwYowTAxIlkEZs=",
+        "rev": "efe6f071ede9d21c37462d2d6682d5e670099684",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1074086.efe6f071ede9/nixexprs.tar.zst"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1074086.efe6f071ede9/nixexprs.tar.zst"
       }
     }
   },
