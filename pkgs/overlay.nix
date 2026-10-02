@@ -122,4 +122,7 @@ in
   # Explicitly declare as custom packages.
   inherit customZshPlugins;
   # inherit customFontPackages;
+
+  # Pin until the build error is fixed
+  inherit (inputs.unstable-202609.legacyPackages.${system}) git-annex;
 }

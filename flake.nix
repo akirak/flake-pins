@@ -8,6 +8,8 @@
     nixpkgs.follows = "nixpkgs-unstable";
     unstable.follows = "nixos-unstable";
 
+    unstable-202609.url = "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1074086.efe6f071ede9/nixexprs.tar.zst";
+
     home-manager-unstable.url = "github:nix-community/home-manager";
 
     # Needed to provide Emacs executables from default.nix
