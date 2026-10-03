@@ -125,4 +125,10 @@ in
 
   # Pin until the build error is fixed
   inherit (inputs.unstable-202609.legacyPackages.${system}) git-annex;
+
+  handlr-regex = prev.handlr-regex.overrideAttrs {
+    patches = [
+      ./patches/handlr-regex/shared-mime-info-2.5.patch
+    ];
+  };
 }
