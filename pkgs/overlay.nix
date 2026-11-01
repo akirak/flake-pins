@@ -109,9 +109,6 @@ in
 
     # a variant of existing packages in nixpkgs
     ffmpeg-qsv = pinnedNixosUnstable.callPackage ./by-name/ffmpeg/qsv.nix { };
-
-    # unpackaged in nixpkgs
-    github-linguist = callPackage ./by-name/github-linguist { };
   };
 
   customDataPackages = {
