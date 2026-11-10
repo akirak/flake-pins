@@ -111,7 +111,7 @@ in
     ffmpeg-qsv = pinnedNixosUnstable.callPackage ./by-name/ffmpeg/qsv.nix { };
 
     # unpackaged in nixpkgs
-    h5i = callPackage ./by-name/h5i { };
+    # h5i = callPackage ./by-name/h5i { };
   };
 
   customDataPackages = {
