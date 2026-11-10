@@ -33,7 +33,7 @@ in
         {
           # Expose for internal projects
           effect-tsgo = inputs.tsgo-effect.packages.${system}.default;
-          inherit (pkgs) git-annex handlr-regex;
+          inherit (pkgs) handlr-regex zizmor;
         }
       ];
     in
