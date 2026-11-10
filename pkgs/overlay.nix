@@ -126,6 +126,8 @@ in
   # Pin until the build error is fixed
   inherit (inputs.unstable-202609.legacyPackages.${system}) git-annex;
 
+  inherit (inputs.nixos-unstable-small.legacyPackages.${system}) zizmor;
+
   handlr-regex = prev.handlr-regex.overrideAttrs {
     patches = [
       ./patches/handlr-regex/shared-mime-info-2.5.patch
