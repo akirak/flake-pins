@@ -20,11 +20,11 @@
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1794290509,
-        "narHash": "sha256-opfLSrrFuPtV9cSC+cSrfI9HV6a87XFEZBitx1fc3m4=",
+        "lastModified": 1794436291,
+        "narHash": "sha256-tqiZ1v5pKHnRhGTVuwC91IlQ7CyVDOoFt3m5yPQXLJk=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "757809c6604844cf33ebf7afb6fb51b4e1faafa8",
+        "rev": "1a8581d2d123d525f26c3e18ed95e419f2279d04",
         "type": "github"
       }
     },
@@ -62,11 +62,11 @@
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1791914995,
-        "narHash": "sha256-Zf/xfQEAasnwnmEfHqW/4hjDE/s44yn2hD4RuVIZRjA=",
+        "lastModified": 1794427683,
+        "narHash": "sha256-o7ey9gEilsxaifqJWnBDlYSKbNWYQYtKwDyXeZU2kaU=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b7a79d3fea1e214f6d668d521cecec0c01e26544",
+        "rev": "cd489559845d81f673a12885576016c65cbe9363",
         "type": "github"
       }
     },
@@ -117,11 +117,11 @@
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1794272644,
-        "narHash": "sha256-tOW6qflUVDiw5PPhkVRnmwyFImwPUMpmbiwiGabZ6V8=",
-        "rev": "62c4d39509125c04b6aba03eb3dd0ee5b955cc9c",
+        "lastModified": 1794435240,
+        "narHash": "sha256-t+xPCSAczNKJBG0a7dkjZDJXKDtN9th6bqOCrdx8Sz4=",
+        "rev": "18808198c9047939daaaefad3772c72b4e955116",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable-small/nixos-26.11pre1115805.62c4d3950912/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/unstable-small/nixos-26.11pre1118267.18808198c904/nixexprs.tar.zst"
       }
     },
     {
@@ -130,11 +130,11 @@
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1793977579,
-        "narHash": "sha256-4/Yzr1fWTh/zBAR1tR84ZQ1Zhmor8AXwgD4AS7sPn60=",
-        "rev": "4fe25e12eb9f4c744966dd3de5a05246cf098601",
+        "lastModified": 1794041552,
+        "narHash": "sha256-ylq2ECc2gjIQi5HtrjzSHhqVQ4e5CQqLi/M5gA8+HEo=",
+        "rev": "085af13c1607f4f73ab1e7a51071faf6577a7e87",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1109744.4fe25e12eb9f/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1113202.085af13c1607/nixexprs.tar.zst"
       }
     },
     {
@@ -143,11 +143,11 @@
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1793977579,
-        "narHash": "sha256-4/Yzr1fWTh/zBAR1tR84ZQ1Zhmor8AXwgD4AS7sPn60=",
-        "rev": "4fe25e12eb9f4c744966dd3de5a05246cf098601",
+        "lastModified": 1794041552,
+        "narHash": "sha256-ylq2ECc2gjIQi5HtrjzSHhqVQ4e5CQqLi/M5gA8+HEo=",
+        "rev": "085af13c1607f4f73ab1e7a51071faf6577a7e87",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1109744.4fe25e12eb9f/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1113202.085af13c1607/nixexprs.tar.zst"
       }
     },
     {
@@ -156,11 +156,11 @@
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1794293641,
-        "narHash": "sha256-Cr/NzuGQIdaBDkU2XIaqVHoNFp+/BFV6xxLIf1uGBV8=",
+        "lastModified": 1794378939,
+        "narHash": "sha256-DbxGSbQo5zWhnXDtk0QBh5KG7UTmK2iISbCV9MJ7J78=",
         "owner": "nix-ocaml",
         "repo": "nix-overlays",
-        "rev": "05d66d46ced7392849313526116910c35225e730",
+        "rev": "1cc45ad041381ecdb00ce901f5de744915199b65",
         "type": "github"
       }
     },
@@ -170,11 +170,11 @@
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1794303164,
-        "narHash": "sha256-UZMtOt43/HRVssXPSuPv8t11Toq9+CjyWUfYQ3tqGVE=",
+        "lastModified": 1794388042,
+        "narHash": "sha256-rsskkiDNmuZGK6Xk3JvWUxWENjuX4Jf0hOSFYujGC0s=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "89750a2ef1c6a44db9f4251b16c23deffdcfddff",
+        "rev": "0070500a3d72ade21323092e7bdd7125c5268482",
         "type": "github"
       }
     },
@@ -198,11 +198,11 @@
         "type": "indirect"
       },
       "to": {
-        "lastModified": 1794309396,
-        "narHash": "sha256-2gyba2f5bhv3ourf8SH+8O9cyZdJ6QErVS+kjq48zdA=",
+        "lastModified": 1794435660,
+        "narHash": "sha256-H/B5I22b0TMW97FslM4esy6YHlczFatviBKYjyc0tP8=",
         "owner": "Effect-TS",
         "repo": "tsgo",
-        "rev": "a764f17982562aec0a2c326b371d51fff10b5fa5",
+        "rev": "893ffbeabe1fa31f78d36e1c06c27928ec2c794b",
         "type": "github"
       }
     },
